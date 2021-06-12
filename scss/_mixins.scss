@@ -1,0 +1,12 @@
+@mixin textFont($fw, $fs, $lh, $color) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+  font-family: "Open Sans", sans-serif;
+}
+@mixin textFontFWS($fw, $fs) {
+  font-weight: $fw;
+  font-size: $fs;
+  font-family: "Open Sans", sans-serif;
+}
