@@ -3,10 +3,41 @@
   font-size: $fs;
   line-height: $lh;
   color: $color;
-  font-family: "Open Sans", sans-serif;
+  font-family: "TT Norms", sans-serif;
 }
 @mixin textFontFWS($fw, $fs) {
   font-weight: $fw;
   font-size: $fs;
-  font-family: "Open Sans", sans-serif;
+  line-height: 26px;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin Paragraph($fw) {
+  font-weight: $fw;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin UnorederedList($fw) {
+  font-weight: $fw;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin Orderedlist($fw) {
+  font-weight: $fw;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin LinkRegular {
+  font-size: 16px;
+  line-height: 20px;
+  color: $Active;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin LinkHover {
+  font-size: 16px;
+  line-height: 20px;
+  color: $AccentRed;
+  font-family: "TT Norms", sans-serif;
 }

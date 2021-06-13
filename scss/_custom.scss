@@ -8,33 +8,40 @@ $container-max-widths: (
   xxl: 1320px,
 ) !default;
 
-// $font-family-sans-serif: "Oswald", sans-serif;
+$font-family-sans-serif: "ttnorms-regular", sans-serif;
 
+//Link color
 $link-color: $colorLinkWhite !default;
-$colorLinkWhite: #ffffff;
 $link-decoration: none !default;
 
+//Margin bot
 $paragraph-margin-bottom: 0rem !default;
 $form-label-margin-bottom: 0rem !default;
 $breadcrumb-margin-bottom: 0rem !default;
 
-$Main: #323264;
-$MainAlt: #46466e;
-$MainSoft: #686887;
-$colorWhite: #ffffff;
+//Color
+$Main: #323264 !default;
+$MainAlt: #46466e !default;
+$MainSoft: #686887 !default;
+$colorWhite: #ffffff !default;
 
-$AccentRed: #f0145a;
-$Active: #24a3ff;
-$ActiveHover: #0085ff;
-$ActiveActive: #006ccf;
+$AccentRed: #f0145a !default;
+$Active: #24a3ff !default;
+$ActiveHover: #0085ff !default;
+$ActiveActive: #006ccf !default;
 
-$backgroundWhite: #ffffff;
-$BgGrey: #f5f5fa;
-$BgGreyAlt: #ededf7;
-$TextGrey: #b3b3ba;
-$SeparatorGrey: #e6e6f0;
+$backgroundWhite: #ffffff !default;
+$BgGrey: #f5f5fa !default;
+$BgGreyAlt: #ededf7 !default;
+$TextGrey: #b3b3ba !default;
+$SeparatorGrey: #e6e6f0 !default;
 
 //Gradient
+$GradientHeaderBottom: linear-gradient(
+  180deg,
+  rgba(50, 50, 100, 0) 16.67%,
+  #323264 100%
+) !default;
 $Gradinet: linear-gradient(
   128.63deg,
   #323264 0%,
@@ -46,15 +53,29 @@ $GradientSoft: linear-gradient(
   #323264 14.33%,
   #323264 51.39%,
   #7a425e 87.53%
-);
-$GradientRed: linear-gradient(121.42deg, #f0145a 30.65%, #693264 107.33%);
+) !default;
+$GradientRed: linear-gradient(
+  121.42deg,
+  #f0145a 30.65%,
+  #693264 107.33%
+) !default;
 $GradientSupersoft: linear-gradient(
   228.57deg,
   #323264 11.93%,
   #323264 57.17%,
   #643e72 87.46%
-);
-$GradientRedText: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
+) !default;
+$GradientRedText: linear-gradient(
+  90.13deg,
+  #f0145a 0.84%,
+  #ef8080 99.96%
+) !default;
+
+//Font size
+$font-size-base: 1rem !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.5 !default;
+$h4-font-size: $font-size-base * 1.125 !default;
 
 // $blue: #0d6efd !default;
 // $indigo: #6610f2 !default;

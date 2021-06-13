@@ -1,4 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Roboto&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Roboto&display=swap");
+@font-face {
+  font-family: "ttnorms-bold";
+  src: url("../fonts/TTNorms-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ttnorms-medium";
+  src: url("../fonts/TTNorms-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ttnorms-regular";
+  src: url("../fonts/TTNorms-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   // padding-top: 20px;
   // &:before {
@@ -52,12 +70,7 @@ body {
 
 .header-wrapper {
   height: 100vh;
-  background: linear-gradient(
-    42.01deg,
-    #323264 14.33%,
-    #323264 51.39%,
-    #7a425e 87.53%
-  );
+  background: $GradientSoft;
   &::after {
     position: absolute;
     content: "";
@@ -66,11 +79,7 @@ body {
     right: 0px;
     bottom: 0px;
     z-index: 3;
-    background: linear-gradient(
-      180deg,
-      rgba(50, 50, 100, 0) 16.67%,
-      #323264 100%
-    );
+    background: $GradientHeaderBottom;
   }
 }
 .header-navbar {
@@ -125,7 +134,7 @@ body {
           height: 24px;
           content: "";
           position: absolute;
-          top: 0;
+          top: -3px;
           left: -4px;
           z-index: -1;
           display: none;
@@ -311,10 +320,9 @@ body {
 
 // End header
 .section-wrapper {
-  background: linear-gradient(
-    228.57deg,
-    #323264 11.93%,
-    #323264 57.17%,
-    #643e72 87.46%
-  );
+  background: $GradientSupersoft;
+  width: 100%;
+  @include media(">=992px") {
+    height: 1374px;
+  }
 }
