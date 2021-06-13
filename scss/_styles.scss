@@ -60,29 +60,28 @@ body {
   height: 100vh;
   .header-navbar {
     padding-top: 20px;
-
     display: flex;
     justify-content: space-between;
     flex-direction: column-reverse;
     max-width: 1320px;
+    min-height: 65px;
     @include media(">=992px") {
       align-items: center;
       flex-direction: row;
-
       padding-top: 50px;
     }
   }
 }
 .logo-header {
   .logo {
-    display: inline-block;
-    background: url(../images/logo-white.svg) no-repeat;
+    display: block;
+    background: url("../images/svg/logo-white.svg") no-repeat;
     height: 47px;
     width: 155px;
   }
   .logo-tagline {
     color: $colorWhite;
-    font-size: 9px;
+    font-size: 13px;
   }
 }
 .header-nav {
@@ -91,11 +90,33 @@ body {
     justify-content: space-between;
     .language-list {
       li {
-        display: inline;
+        display: inline-block;
         margin-left: 20px;
         &:first-child {
           margin-left: 0;
         }
+        a {
+          position: relative;
+          z-index: 2;
+        }
+        a:after {
+          background: $backgroundAccentRed;
+          border-radius: 8px;
+          width: 29px;
+          height: 24px;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -4px;
+          z-index: -1;
+          display: none;
+        }
+        a.activ:after {
+          display: inline-block;
+        }
+      }
+      li:hover > a::after {
+        display: inline-block;
       }
     }
     .header-contact {
@@ -103,9 +124,12 @@ body {
       justify-content: flex-end;
       flex-wrap: nowrap;
       li {
-        margin: 0 20px;
+        margin: 0px;
         color: $colorWhite;
 
+        @include media(">=992px") {
+          margin: 0 20px;
+        }
         &:first-child {
           display: none;
           @include media(">=992px") {
@@ -125,7 +149,7 @@ body {
           }
           a {
             display: block;
-            background: url("../images/facebook-header.svg");
+            background: url("../images/svg/facebook-header.svg");
             width: 24px;
             height: 24px;
           }

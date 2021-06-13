@@ -8,11 +8,14 @@ $container-max-widths: (
   xxl: 1320px,
 ) !default;
 
-$spacer: 0rem !default;
-// $navbar-padding-y: $spacer / 1 !default;
+// $font-family-sans-serif: "Oswald", sans-serif;
 
-$link-color: $colorWhite !default;
+$link-color: $colorLinkWhite !default;
 $link-decoration: none !default;
+
+$paragraph-margin-bottom: 0rem !default;
+$form-label-margin-bottom: 0rem !default;
+$breadcrumb-margin-bottom: 0rem !default;
 
 // $blue: #0d6efd !default;
 // $indigo: #6610f2 !default;
