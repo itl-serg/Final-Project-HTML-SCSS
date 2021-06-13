@@ -11,11 +11,50 @@ $container-max-widths: (
 // $font-family-sans-serif: "Oswald", sans-serif;
 
 $link-color: $colorLinkWhite !default;
+$colorLinkWhite: #ffffff;
 $link-decoration: none !default;
 
 $paragraph-margin-bottom: 0rem !default;
 $form-label-margin-bottom: 0rem !default;
 $breadcrumb-margin-bottom: 0rem !default;
+
+$Main: #323264;
+$MainAlt: #46466e;
+$MainSoft: #686887;
+$colorWhite: #ffffff;
+
+$AccentRed: #f0145a;
+$Active: #24a3ff;
+$ActiveHover: #0085ff;
+$ActiveActive: #006ccf;
+
+$backgroundWhite: #ffffff;
+$BgGrey: #f5f5fa;
+$BgGreyAlt: #ededf7;
+$TextGrey: #b3b3ba;
+$SeparatorGrey: #e6e6f0;
+
+//Gradient
+$Gradinet: linear-gradient(
+  128.63deg,
+  #323264 0%,
+  #323264 73.96%,
+  #a54b5f 100%
+) !default;
+$GradientSoft: linear-gradient(
+  42.01deg,
+  #323264 14.33%,
+  #323264 51.39%,
+  #7a425e 87.53%
+);
+$GradientRed: linear-gradient(121.42deg, #f0145a 30.65%, #693264 107.33%);
+$GradientSupersoft: linear-gradient(
+  228.57deg,
+  #323264 11.93%,
+  #323264 57.17%,
+  #643e72 87.46%
+);
+$GradientRedText: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
 
 // $blue: #0d6efd !default;
 // $indigo: #6610f2 !default;

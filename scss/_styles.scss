@@ -51,27 +51,46 @@ body {
 // Header
 
 .header-wrapper {
+  height: 100vh;
   background: linear-gradient(
     42.01deg,
     #323264 14.33%,
     #323264 51.39%,
     #7a425e 87.53%
   );
-  height: 100vh;
-  .header-navbar {
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column-reverse;
-    max-width: 1320px;
-    min-height: 65px;
-    @include media(">=992px") {
-      align-items: center;
-      flex-direction: row;
-      padding-top: 50px;
-    }
+  &::after {
+    position: absolute;
+    content: "";
+    height: 200px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 3;
+    background: linear-gradient(
+      180deg,
+      rgba(50, 50, 100, 0) 16.67%,
+      #323264 100%
+    );
   }
 }
+.header-navbar {
+  padding-top: 20px;
+  // margin-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  max-width: 1320px;
+  min-height: 65px;
+  @include media(">=992px") {
+    align-items: center;
+    flex-direction: row;
+
+    padding-top: 50px;
+    // margin-top: 50px;
+  }
+}
+
 .logo-header {
   .logo {
     display: block;
@@ -157,6 +176,8 @@ body {
       }
     }
   }
+
+  // Burger menu
   .nav-list {
     input[type="checkbox"] {
       display: none;
@@ -241,4 +262,59 @@ body {
   }
 }
 
+.bg-header-wrapper {
+  // height: calc(100vh - 65px);
+  height: calc(100vh - 115px);
+}
+.bg-header {
+  height: calc(100vh - 115px);
+
+  .bg-text {
+    height: calc(100vh - 115px);
+    @include media(">=992px") {
+      background: url("../images/svg/frame-2.svg") no-repeat;
+      width: 689px;
+      height: 644px;
+      position: relative;
+    }
+    &::before {
+      background: url("../images/svg/symbol-long-leg.svg") no-repeat;
+      background-size: cover;
+      width: 430px;
+      height: 688px;
+      content: "";
+      position: absolute;
+      top: calc(50% - 229px);
+      left: calc(50% - 215px);
+    }
+    span {
+      display: block;
+      width: 200px;
+      height: 100px;
+      color: $colorWhite;
+      z-index: 4;
+      position: absolute;
+      top: calc(50% - 50px);
+      left: calc(50% - 100px);
+    }
+  }
+  a {
+    background: url("../images/svg/scroll-down.svg") no-repeat;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    left: calc(50% - 42px / 2);
+    bottom: 20px;
+    z-index: 4;
+  }
+}
+
 // End header
+.section-wrapper {
+  background: linear-gradient(
+    228.57deg,
+    #323264 11.93%,
+    #323264 57.17%,
+    #643e72 87.46%
+  );
+}
