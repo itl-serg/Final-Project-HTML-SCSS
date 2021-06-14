@@ -1,16 +1,3 @@
-@mixin textFont($fw, $fs, $lh, $color) {
-  font-weight: $fw;
-  font-size: $fs;
-  line-height: $lh;
-  color: $color;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin textFontFWS($fw, $fs) {
-  font-weight: $fw;
-  font-size: $fs;
-  line-height: 26px;
-  font-family: "TT Norms", sans-serif;
-}
 @mixin Paragraph($fw) {
   font-weight: $fw;
   font-size: 18px;
@@ -39,5 +26,10 @@
   font-size: 16px;
   line-height: 20px;
   color: $AccentRed;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin textMainBolt {
+  color: $Main;
+  font-weight: 600;
   font-family: "TT Norms", sans-serif;
 }

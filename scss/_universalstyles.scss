@@ -21,6 +21,7 @@
 
 .header-wrapper {
   height: 100vh;
+  width: 100%;
   background: $GradientSoft;
   &::after {
     position: absolute;
@@ -36,7 +37,6 @@
 .header-navbar {
   padding-top: 20px;
   // margin-top: 20px;
-
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
@@ -50,7 +50,6 @@
     // margin-top: 50px;
   }
 }
-
 .logo-header {
   .logo {
     display: block;
@@ -105,7 +104,6 @@
       li {
         margin: 0px;
         color: $colorWhite;
-
         @include media(">=992px") {
           margin: 0 20px;
         }
@@ -169,7 +167,6 @@
         transition: all 1s ease-in-out;
         position: absolute;
         left: 7px;
-
         height: 2px;
         width: 18px;
         background-color: $backgroundWhite;
@@ -201,7 +198,6 @@
       background: rgba(0, 0, 0, 0.8);
       transform: translate(0, -100%);
       transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
       @include media(">=992px") {
         position: static;
         flex-direction: row;
@@ -221,16 +217,13 @@
     }
   }
 }
-
 .bg-header-wrapper {
   // height: calc(100vh - 65px);
   height: calc(100vh - 115px);
 }
 .bg-header {
-  height: calc(100vh - 115px);
-
+  overflow: hidden;
   .bg-text {
-    height: calc(100vh - 115px);
     @include media(">=992px") {
       background: url("../images/svg/frame-2.svg") no-repeat;
       width: 689px;
@@ -243,9 +236,14 @@
       width: 430px;
       height: 688px;
       content: "";
+
       position: absolute;
-      top: calc(50% - 229px);
-      left: calc(50% - 215px);
+      top: calc(50% - 150px);
+      left: calc(50% - 300px);
+      @include media(">=992px") {
+        top: calc(50% - 229px);
+        left: calc(50% - 215px);
+      }
     }
     span {
       display: block;
@@ -274,33 +272,58 @@
 .footer-wpapper {
   color: $colorTextGrey;
   height: 151px;
-
   .footer-contact {
-    .footer-list {
+    padding: 32px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @include media(">=992px") {
       display: flex;
-      justify-content: space-between;
-      div {
-        padding: 32px 60px 40px;
-      }
-
-      ul {
-        height: 100%;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    ul {
+      padding: 0;
+      height: 100%;
+      @include media(">=992px") {
         display: flex;
-        li:first-child {
-          list-style-type: none;
+      }
+      li {
+        margin-bottom: 20px;
+        margin-right: 0px;
+        list-style-type: none;
+        .footer-tel-color {
+          @include textMainBolt;
+        }
+        @include media(">=992px") {
+          margin-right: 40px;
+          margin-bottom: 0px;
+          list-style-type: disc;
         }
       }
-      a {
-        color: $Active;
-        display: block;
+      li:first-child {
+        list-style-type: none;
+        color: $Main;
       }
-      a:hover {
-        color: $ActiveHover;
-      }
-      .facebook-footer {
-        background: url("../images/svg/facebook-footer.svg") no-repeat;
-        width: 38px;
-        height: 38px;
+    }
+    a {
+      color: $Active;
+      display: block;
+    }
+    a:hover {
+      color: $ActiveHover;
+    }
+    .facebook-footer {
+      background: url("../images/svg/facebook-footer.svg") no-repeat;
+      width: 38px;
+      height: 38px;
+      margin: auto;
+    }
+    .footer-company {
+      text-align: center;
+      @include media(">=992px") {
+        text-align: end;
       }
     }
   }
