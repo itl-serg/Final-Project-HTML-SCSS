@@ -1,26 +1,66 @@
 .article-wrapper {
-  height: 720px;
-  overflow: hidden;
+  max-width: 1320px;
+  margin: auto;
+  @include media(">=992px") {
+    // height: 872px;
+    overflow: hidden;
+  }
+  .public-all {
+    display: inline-block;
+    @include LinkPublic;
+    position: relative;
+    &::after {
+      background: url("../images/svg/liink-arrow.svg");
+      content: "";
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: calc(50% - 5px);
+      left: 88px;
+    }
+  }
 }
-
 .article-publications {
+  @include media(">=992px") {
+    height: 720px;
+  }
   &:after {
     background: $LinearGradient;
     content: "";
     position: absolute;
-    width: 1440px;
+    max-width: 1320px;
     height: 200px;
     left: 0px;
     top: 670px;
     z-index: 3;
   }
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  @include media(">=992px") {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: stretch;
+  }
   .publications-section {
-    max-width: 413px;
-    img,
-    a {
+    width: 413px;
+    margin-left: 40px;
+    &:first-child {
+      margin-left: 0;
+    }
+    img {
       display: block;
+      width: 100%;
+    }
+    a {
+      display: inline-block;
+      @include LinkPublic;
+    }
+    time {
+      @include textdateTime;
+    }
+    p {
+      width: 100%;
     }
   }
 }
