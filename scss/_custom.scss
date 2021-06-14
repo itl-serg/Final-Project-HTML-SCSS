@@ -70,6 +70,11 @@ $GradientRedText: linear-gradient(
   #f0145a 0.84%,
   #ef8080 99.96%
 ) !default;
+$LinearGradient: linear-gradient(
+  180deg,
+  rgba(245, 245, 250, 0) 0%,
+  #f5f5fa 86.5%
+);
 
 //Font size
 $font-size-base: 1rem !default;

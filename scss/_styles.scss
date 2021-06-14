@@ -1,15 +1,26 @@
-// Clients
-.clients-wrapper {
-  .client-head {
-    height: 50px;
+.article-wrapper {
+  height: 720px;
+  overflow: hidden;
+}
+
+.article-publications {
+  &:after {
+    background: $LinearGradient;
+    content: "";
+    position: absolute;
+    width: 1440px;
+    height: 200px;
+    left: 0px;
+    top: 670px;
+    z-index: 3;
   }
-  h4 {
-    @include textHeadBolt;
-    text-transform: uppercase;
-  }
-  .img-client {
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: space-between;
+  .publications-section {
+    max-width: 413px;
+    img,
+    a {
+      display: block;
+    }
   }
 }
-// End clients
