@@ -30,6 +30,14 @@
 }
 @mixin textMainBolt {
   color: $Main;
+  line-height: 19px;
   font-weight: 600;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin textHeadBolt {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  color: $Main;
   font-family: "TT Norms", sans-serif;
 }

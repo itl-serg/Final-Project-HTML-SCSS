@@ -293,7 +293,7 @@
         margin-bottom: 20px;
         margin-right: 0px;
         list-style-type: none;
-        .footer-tel-color {
+        .footer-text-bold {
           @include textMainBolt;
         }
         @include media(">=992px") {
@@ -304,7 +304,7 @@
       }
       li:first-child {
         list-style-type: none;
-        color: $Main;
+        @include textMainBolt;
       }
     }
     a {
