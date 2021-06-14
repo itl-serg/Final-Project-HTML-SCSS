@@ -1,6 +1,7 @@
 .article-wrapper {
   max-width: 1320px;
-  margin: auto;
+  margin: 40px auto;
+
   @include media(">=992px") {
     // height: 872px;
     overflow: hidden;
@@ -18,6 +19,9 @@
       top: calc(50% - 5px);
       left: 88px;
     }
+  }
+  h3 {
+    @include textHeaderGradient;
   }
 }
 .article-publications {
@@ -43,10 +47,14 @@
     align-items: stretch;
   }
   .publications-section {
-    width: 413px;
-    margin-left: 40px;
+    width: 100%;
+
     &:first-child {
       margin-left: 0;
+    }
+    @include media(">=992px") {
+      width: 413px;
+      margin-left: 40px;
     }
     img {
       display: block;

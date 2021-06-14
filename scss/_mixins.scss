@@ -55,3 +55,8 @@
   text-transform: uppercase;
   color: $TextGrey;
 }
+@mixin textHeaderGradient {
+  font-size: 42px;
+  line-height: 50px;
+  color: $GradientRedText;
+}
