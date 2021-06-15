@@ -54,9 +54,25 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   color: $TextGrey;
+  font-family: "TT Norms", sans-serif;
 }
-@mixin textHeaderGradient {
-  font-size: 42px;
+@mixin textHeaderGradient($fs) {
+  font-size: $fs;
   line-height: 50px;
-  color: $GradientRedText;
+  font-weight: 600;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: $GradientRedText;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin buttonPublic {
+  background: $Active;
+  box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+  border-radius: 12px;
+}
+@mixin textButtonPublic {
+  font-size: 14px;
+  line-height: 17px;
+  font-family: "TT Norms", sans-serif;
 }
