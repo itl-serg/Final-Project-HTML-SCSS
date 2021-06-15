@@ -1,5 +1,34 @@
 // Section
 .section-wrapper {
+  .carousel-wrapper {
+    margin-bottom: 55px;
+  }
+  .carousel-content {
+    display: flex;
+    img {
+      border-radius: 12px 0px 0px 12px;
+    }
+    div {
+      margin: 40px 0 0 40px;
+
+      h3 {
+        @include textHeaderGradient(32px, 38px);
+        margin-bottom: 20px;
+        @include media(">=992px") {
+          @include textHeaderGradient(42px, 50px);
+        }
+      }
+      h4 {
+        margin-bottom: 5px;
+        @include textName;
+      }
+      p {
+        @include textPosition;
+      }
+    }
+  }
+}
+.section-successful-cases {
   margin-bottom: 36px;
   .section-link {
     a {
@@ -38,28 +67,33 @@
   @include media(">=992px") {
     overflow: hidden;
   }
-  .public-all {
-    display: inline-block;
-    @include LinkPublic;
-    position: relative;
-    text-transform: uppercase;
-    &::after {
-      background: url("../images/svg/liink-arrow.svg");
-      content: "";
-      width: 12px;
-      height: 12px;
-      position: absolute;
-      top: calc(50% - 7px);
-      left: 100px;
-    }
-  }
+
   h3 {
-    @include textHeaderGradient(32px);
+    @include textHeaderGradient(32px, 38px);
     margin-bottom: 40px;
     @include media(">=992px") {
-      @include textHeaderGradient(42px);
+      @include textHeaderGradient(42px, 50px);
     }
   }
+}
+.public-all {
+  display: inline-block;
+  @include textButtonPublic;
+  color: $Active;
+  position: relative;
+  text-transform: uppercase;
+  &::after {
+    background: url("../images/svg/liink-arrow.svg");
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: calc(50% - 6px);
+    left: 75px;
+  }
+}
+.public-all:hover {
+  color: $ActiveHover;
 }
 .article-publications {
   position: relative;
@@ -108,6 +142,9 @@
       display: inline-block;
       @include LinkPublic;
       margin-bottom: 10px;
+    }
+    a:hover {
+      color: $ActiveHover;
     }
     time {
       display: block;

@@ -41,6 +41,18 @@
   color: $Active;
   font-family: "TT Norms", sans-serif;
 }
+@mixin textName {
+  font-size: 18px;
+  line-height: 21px;
+  color: $TextGrey;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin textPosition {
+  font-size: 16px;
+  line-height: 22px;
+  color: $TextGrey;
+  font-family: "TT Norms", sans-serif;
+}
 @mixin LinkHover {
   font-size: 16px;
   line-height: 20px;
@@ -68,9 +80,9 @@
   color: $TextGrey;
   font-family: "TT Norms", sans-serif;
 }
-@mixin textHeaderGradient($fs) {
+@mixin textHeaderGradient($fs, $lh) {
   font-size: $fs;
-  line-height: 50px;
+  line-height: $lh;
   font-weight: 600;
   color: transparent;
   -webkit-background-clip: text;

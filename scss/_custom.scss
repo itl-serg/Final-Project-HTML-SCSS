@@ -11,6 +11,7 @@ $container-max-widths: (
 $font-family-sans-serif: "ttnorms-regular", sans-serif;
 
 //Link color
+
 $link-color: $colorLinkWhite !default;
 $link-decoration: none !default;
 
@@ -18,25 +19,6 @@ $link-decoration: none !default;
 $paragraph-margin-bottom: 0rem !default;
 $form-label-margin-bottom: 0rem !default;
 $breadcrumb-margin-bottom: 0rem !default;
-
-//Color
-$Main: #323264 !default;
-$MainAlt: #46466e !default;
-$MainSoft: #686887 !default;
-$colorWhite: #ffffff !default;
-
-$AccentRed: #f0145a !default;
-$Active: #24a3ff !default;
-$ActiveHover: #0085ff !default;
-$ActiveActive: #006ccf !default;
-
-$backgroundWhite: #ffffff !default;
-$BgGrey: #f5f5fa !default;
-$BgGreyAlt: #ededf7 !default;
-$TextGrey: #b3b3ba !default;
-$SeparatorGrey: #e6e6f0 !default;
-
-$backgroundAccentRed: #f0145a !default;
 
 //Gradient
 $GradientHeaderBottom: linear-gradient(
