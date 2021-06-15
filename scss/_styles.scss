@@ -1,3 +1,37 @@
+// Section
+.section-wrapper {
+  margin-bottom: 36px;
+  .section-link {
+    a {
+      display: inline-block;
+      @include textSuccessfulCases;
+      margin-bottom: 68px;
+      @include media(">=992px") {
+        margin-bottom: 68px;
+      }
+    }
+  }
+  p {
+    @include ParagraphSm;
+    margin-bottom: 10px;
+    @include media(">=992px") {
+      @include ParagraphLg;
+      margin-bottom: 20px;
+    }
+  }
+  a {
+    display: inline-block;
+    @include UnorederedList(400);
+    color: $TextGrey;
+    margin-bottom: 41px;
+    @include media(">=992px") {
+      margin-bottom: 40px;
+    }
+  }
+}
+// End section
+
+// Article
 .article-wrapper {
   max-width: 1320px;
   margin: 40px auto;
@@ -29,7 +63,6 @@
 }
 .article-publications {
   position: relative;
-
   @include media(">=992px") {
     height: 720px;
   }
@@ -91,7 +124,6 @@
       }
     }
   }
-
   .more-publications {
     display: block;
     width: 250px;
@@ -109,14 +141,7 @@
     }
   }
 }
-
 .article-publications {
-  // div:nth-child(2) {
-  //   display: none;
-  //   @include media(">=992px") {
-  //     display: block;
-  //   }
-  // }
   div:last-child {
     display: none;
     @include media(">=992px") {
@@ -124,3 +149,4 @@
     }
   }
 }
+// End article

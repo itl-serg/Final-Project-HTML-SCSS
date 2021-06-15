@@ -4,6 +4,18 @@
   line-height: 26px;
   font-family: "TT Norms", sans-serif;
 }
+@mixin ParagraphLg {
+  font-size: 24px;
+  line-height: 28px;
+  color: $MainSoft;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin ParagraphSm {
+  font-size: 18px;
+  line-height: 21px;
+  color: $MainSoft;
+  font-family: "TT Norms", sans-serif;
+}
 @mixin UnorederedList($fw) {
   font-weight: $fw;
   font-size: 18px;
@@ -16,6 +28,7 @@
   line-height: 26px;
   font-family: "TT Norms", sans-serif;
 }
+
 @mixin LinkRegular {
   font-size: 16px;
   line-height: 20px;
@@ -47,7 +60,6 @@
   color: $Main;
   font-family: "TT Norms", sans-serif;
 }
-
 @mixin textdateTime {
   font-size: 12px;
   line-height: 14px;
@@ -75,4 +87,12 @@
   font-size: 14px;
   line-height: 17px;
   font-family: "TT Norms", sans-serif;
+}
+@mixin textSuccessfulCases {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  font-family: "TT Norms", sans-serif;
+  color: $AccentRed;
+  text-transform: uppercase;
 }
