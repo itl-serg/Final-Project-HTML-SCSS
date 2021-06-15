@@ -36,7 +36,6 @@
 }
 .header-navbar {
   padding-top: 20px;
-  // margin-top: 20px;
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
@@ -45,9 +44,7 @@
   @include media(">=992px") {
     align-items: center;
     flex-direction: row;
-
     padding-top: 50px;
-    // margin-top: 50px;
   }
 }
 .logo-header {
@@ -184,6 +181,9 @@
         display: none;
       }
     }
+    .burger:hover {
+      cursor: pointer;
+    }
     .header-nav-list {
       display: flex;
       align-items: center;
@@ -195,7 +195,7 @@
       z-index: 9;
       width: 100%;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.9);
       transform: translate(0, -100%);
       transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       @include media(">=992px") {
@@ -213,12 +213,20 @@
       li {
         list-style-type: none;
         margin: 0 20px;
+        a {
+          @include linkNavbarMd;
+          @include media(">=992px") {
+            @include linkNavbarLg;
+          }
+        }
+        a:hover {
+          color: $ActiveHover;
+        }
       }
     }
   }
 }
 .bg-header-wrapper {
-  // height: calc(100vh - 65px);
   height: calc(100vh - 115px);
 }
 .bg-header {
@@ -229,21 +237,6 @@
       width: 689px;
       height: 644px;
       position: relative;
-    }
-    &::before {
-      background: url("../images/svg/symbol-long-leg.svg") no-repeat;
-      background-size: cover;
-      width: 430px;
-      height: 688px;
-      content: "";
-
-      position: absolute;
-      top: calc(50% - 150px);
-      left: calc(50% - 300px);
-      @include media(">=992px") {
-        top: calc(50% - 229px);
-        left: calc(50% - 215px);
-      }
     }
     span {
       display: block;
@@ -256,6 +249,20 @@
       left: calc(50% - 100px);
     }
   }
+  .bg-text::after {
+    background: url("../images/svg/symbol-long-leg.svg") no-repeat;
+    background-size: cover;
+    width: 430px;
+    height: 688px;
+    content: "";
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 300px);
+    @include media(">=992px") {
+      top: calc(50% - 229px);
+      left: calc(50% - 215px);
+    }
+  }
   a {
     background: url("../images/svg/scroll-down.svg") no-repeat;
     position: absolute;
@@ -266,7 +273,6 @@
     z-index: 4;
   }
 }
-
 // End header
 
 // Clients

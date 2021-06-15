@@ -4,10 +4,10 @@
 }
 .main-container {
   margin-bottom: 20px;
+
   @include media(">=992px") {
     margin-bottom: 40px;
   }
-
   .main-container-link {
     color: $colorWhite;
     opacity: 0.5;
@@ -119,11 +119,10 @@
 
 // Section
 .gallery-wrapper {
-  margin: 0 20px 50px;
+  margin-bottom: 50px;
   @include media(">=992px") {
     margin: 0 60px 55px;
   }
-
   .splide__arrow {
     display: none;
   }

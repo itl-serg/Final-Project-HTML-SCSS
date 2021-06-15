@@ -76,6 +76,13 @@
   color: $MainSoft;
   font-family: "TT Norms", sans-serif;
 }
+@mixin linkNavbarLg {
+  font-size: 18px;
+  line-height: 21px;
+  color: $colorWhite;
+  font-family: "TT Norms", sans-serif;
+}
+
 @mixin UnorederedList($fw) {
   font-weight: $fw;
   font-size: 18px;
@@ -100,7 +107,6 @@
   color: $TextGrey;
   font-family: "TT Norms", sans-serif;
 }
-
 @mixin textMainBolt {
   color: $Main;
   line-height: 19px;
@@ -117,5 +123,11 @@
   font-size: 24px;
   line-height: 28px;
   color: $Active;
+  font-family: "TT Norms", sans-serif;
+}
+@mixin linkNavbarMd {
+  font-size: 32px;
+  line-height: 38px;
+  color: $colorWhite;
   font-family: "TT Norms", sans-serif;
 }
