@@ -21,13 +21,18 @@
     cursor: pointer;
   }
 }
-
 .carousel-content {
-  display: flex;
-  img {
-    border-radius: 12px 0px 0px 12px;
+  @include media(">=992px") {
+    display: flex;
   }
-  div {
+  img {
+    display: none;
+    @include media(">=992px") {
+      display: block;
+      border-radius: 12px 0px 0px 12px;
+    }
+  }
+  .gallery-carousel {
     margin: 40px 0 0 40px;
 
     h3 {
@@ -37,12 +42,30 @@
         @include textHeaderGradient(42px, 50px);
       }
     }
-    h4 {
-      margin-bottom: 5px;
-      @include textName;
-    }
-    p {
-      @include textPosition;
+    .gallery-img-for-text {
+      display: flex;
+      @include media(">=992px") {
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: block;
+        margin-right: 10px;
+        @include media(">=992px") {
+          display: none;
+        }
+      }
+      .gallery-text {
+        h4 {
+          margin-bottom: 5px;
+          @include textName;
+        }
+        p {
+          @include textPosition;
+        }
+      }
     }
   }
 }
