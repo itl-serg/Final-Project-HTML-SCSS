@@ -1,33 +1,52 @@
 // Section
-.section-wrapper {
-  .carousel-wrapper {
-    margin-bottom: 55px;
-  }
-  .carousel-content {
-    display: flex;
-    img {
-      border-radius: 12px 0px 0px 12px;
-    }
-    div {
-      margin: 40px 0 0 40px;
 
-      h3 {
-        @include textHeaderGradient(32px, 38px);
-        margin-bottom: 20px;
-        @include media(">=992px") {
-          @include textHeaderGradient(42px, 50px);
-        }
+.gallery-wrapper {
+  margin-bottom: 55px;
+  .splide__arrow {
+    display: none;
+  }
+  .splide__pagination__page {
+    background: $Active;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 9px;
+    border: none;
+  }
+  .splide__pagination__page.is-active {
+    background: $ActiveActive;
+  }
+  .splide__pagination__page:hover {
+    cursor: pointer;
+  }
+}
+
+.carousel-content {
+  display: flex;
+  img {
+    border-radius: 12px 0px 0px 12px;
+  }
+  div {
+    margin: 40px 0 0 40px;
+
+    h3 {
+      @include textHeaderGradient(32px, 38px);
+      margin-bottom: 20px;
+      @include media(">=992px") {
+        @include textHeaderGradient(42px, 50px);
       }
-      h4 {
-        margin-bottom: 5px;
-        @include textName;
-      }
-      p {
-        @include textPosition;
-      }
+    }
+    h4 {
+      margin-bottom: 5px;
+      @include textName;
+    }
+    p {
+      @include textPosition;
     }
   }
 }
+
 .section-successful-cases {
   margin-bottom: 36px;
   .section-link {
