@@ -1,7 +1,129 @@
-// Section
+// Main
+.main-wrapper {
+  background: $Gradinet;
+}
+.main-container {
+  margin-bottom: 20px;
+  @include media(">=992px") {
+    margin-bottom: 40px;
+  }
 
+  .main-container-link {
+    color: $colorWhite;
+    opacity: 0.5;
+    position: relative;
+  }
+  .main-container-link::after {
+    content: "";
+    background: url("../images/svg/liink-arrow-grey.svg") no-repeat;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: calc(50% - 4px);
+    left: 60px;
+  }
+  h3 {
+    @include textHeaderGradient(32px, 38px);
+    margin-bottom: 20px;
+    @include media(">=992px") {
+      @include textHeaderGradient(42px, 50px);
+      margin-bottom: 68px;
+    }
+  }
+  .main-link-text {
+    padding-bottom: 60px;
+    @include media(">=992px") {
+      padding-top: 112px;
+      padding-bottom: 100px;
+    }
+    a {
+      @include LinkPublic;
+      height: 64px;
+      padding-left: 95px;
+      @include media(">=992px") {
+        @include LinkMain;
+        height: auto;
+        padding-left: 0;
+      }
+      position: relative;
+      margin-bottom: 15px;
+      display: block;
+    }
+    a:after {
+      content: "";
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      background-color: $backgroundWhite;
+      border-radius: 24px;
+      top: -15px;
+      left: 0;
+      @include media(">=992px") {
+        width: 92px;
+        height: 92px;
+        top: -102px;
+      }
+    }
+    a:before {
+      content: "";
+      position: absolute;
+      background-size: cover;
+      width: 44px;
+      height: 44px;
+      top: -4px;
+      left: 9px;
+      z-index: 3;
+      @include media(">=992px") {
+        width: 64px;
+        height: 64px;
+        top: -90px;
+        left: 14px;
+      }
+    }
+    .iconfinder-1::before {
+      background: url("../images/sprite/sprite.svg#iconfinder-1") no-repeat;
+    }
+    .iconfinder-2::before {
+      background: url("../images/sprite/sprite.svg#iconfinder-2") no-repeat;
+    }
+    .iconfinder-3::before {
+      background: url("../images/sprite/sprite.svg#iconfinder-3") no-repeat;
+    }
+    .iconfinder-4::before {
+      background: url("../images/sprite/sprite.svg#iconfinder-4") no-repeat;
+    }
+    .iconfinder-5::before {
+      background: url("../images/sprite/sprite.svg#iconfinder-5") no-repeat;
+    }
+    .iconfinder-6::before {
+      background: url("../images/sprite/sprite.svg#iconfinder-6") no-repeat;
+      top: -6px;
+      @include media(">=992px") {
+        top: -83px;
+        left: 21px;
+      }
+    }
+    a:hover {
+      color: $ActiveHover;
+    }
+    p {
+      @include textPositionMob;
+      color: $colorWhite;
+      @include media(">=992px") {
+        @include Paragraph(400);
+      }
+    }
+  }
+}
+// End main
+
+// Section
 .gallery-wrapper {
-  margin-bottom: 55px;
+  margin: 0 20px 50px;
+  @include media(">=992px") {
+    margin: 0 60px 55px;
+  }
+
   .splide__arrow {
     display: none;
   }
@@ -33,12 +155,17 @@
     }
   }
   .gallery-carousel {
-    margin: 40px 0 0 40px;
+    @include media(">=992px") {
+      margin: 40px 0 0 40px;
+    }
 
     h3 {
       @include textHeaderGradient(32px, 38px);
       margin-bottom: 20px;
       @include media(">=992px") {
+        @include textHeaderGradient(38px, 46px);
+      }
+      @include media(">=1140px") {
         @include textHeaderGradient(42px, 50px);
       }
     }
@@ -69,7 +196,6 @@
     }
   }
 }
-
 .section-successful-cases {
   margin-bottom: 36px;
   .section-link {
