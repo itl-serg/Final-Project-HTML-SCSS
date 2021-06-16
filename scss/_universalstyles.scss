@@ -23,6 +23,7 @@
   height: 100vh;
   width: 100%;
   background: $GradientSoft;
+  overflow: hidden;
   &::after {
     position: absolute;
     content: "";
@@ -230,7 +231,7 @@
   height: calc(100vh - 115px);
 }
 .bg-header {
-  overflow: hidden;
+  // overflow: hidden;
   .bg-text {
     @include media(">=992px") {
       background: url("../images/svg/frame-2.svg") no-repeat;
@@ -259,8 +260,8 @@
     top: calc(50% - 150px);
     left: calc(50% - 300px);
     @include media(">=992px") {
-      top: calc(50% - 229px);
-      left: calc(50% - 215px);
+      // top: calc(50% - 229px);
+      // left: calc(50% - 215px);
     }
   }
   a {
