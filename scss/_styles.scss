@@ -135,6 +135,9 @@
     margin-left: 9px;
     border: none;
   }
+  .splide__pagination {
+    padding: 0;
+  }
   .splide__pagination__page.is-active {
     background: $ActiveActive;
   }
@@ -145,19 +148,31 @@
 .carousel-content {
   @include media(">=992px") {
     display: flex;
+    align-items: flex-start;
   }
+
   img {
-    display: none;
+    flex-shrink: 0;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     @include media(">=992px") {
-      display: block;
+      flex-shrink: 1;
       border-radius: 12px 0px 0px 12px;
+      width: 100%;
+      height: 100%;
+      position: static;
+      margin-right: 0px;
     }
   }
-  .gallery-carousel {
+  .carousel-text {
     @include media(">=992px") {
       margin: 40px 0 0 40px;
     }
-
     h3 {
       @include textHeaderGradient(32px, 38px);
       margin-bottom: 20px;
@@ -168,29 +183,20 @@
         @include textHeaderGradient(42px, 50px);
       }
     }
-    .gallery-img-for-text {
-      display: flex;
+    h4 {
+      margin-bottom: 5px;
+      @include textName;
+      padding-left: 80px;
       @include media(">=992px") {
+        padding-left: 0px;
       }
-
-      img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: block;
-        margin-right: 10px;
-        @include media(">=992px") {
-          display: none;
-        }
-      }
-      .gallery-text {
-        h4 {
-          margin-bottom: 5px;
-          @include textName;
-        }
-        p {
-          @include textPosition;
-        }
+    }
+    p {
+      padding-left: 80px;
+      padding-bottom: 5px;
+      @include textPosition;
+      @include media(">=992px") {
+        padding-left: 0px;
       }
     }
   }
