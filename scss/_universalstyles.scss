@@ -24,6 +24,7 @@
   width: 100%;
   background: $GradientSoft;
   overflow: hidden;
+  position: relative;
   &::after {
     position: absolute;
     content: "";
@@ -34,9 +35,13 @@
     z-index: 3;
     background: $GradientHeaderBottom;
   }
+  min-height: 640px;
+  @include media(">=992px") {
+    min-height: 800px;
+  }
 }
 .header-navbar {
-  padding-top: 20px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
@@ -45,19 +50,20 @@
   @include media(">=992px") {
     align-items: center;
     flex-direction: row;
-    padding-top: 50px;
+    margin-top: 50px;
   }
 }
 .logo-header {
   .logo {
     display: block;
     background: url("../images/svg/logo-white.svg") no-repeat;
-    height: 47px;
-    width: 155px;
-  }
-  .logo-tagline {
-    color: $colorWhite;
-    font-size: 13px;
+    background-size: cover;
+    height: 31px;
+    width: 77.5px;
+    @include media(">=992px") {
+      height: 62px;
+      width: 155px;
+    }
   }
 }
 .header-nav {
@@ -74,6 +80,9 @@
         a {
           position: relative;
           z-index: 2;
+          color: $colorWhite;
+          letter-spacing: 1px;
+          @include linkRegular(12px, 14px);
         }
         a:after {
           background: $backgroundAccentRed;
@@ -82,8 +91,8 @@
           height: 24px;
           content: "";
           position: absolute;
-          top: -3px;
-          left: -4px;
+          top: -5px;
+          left: -6px;
           z-index: -1;
           display: none;
         }
@@ -100,7 +109,7 @@
       justify-content: flex-end;
       flex-wrap: nowrap;
       li {
-        margin: 0px;
+        margin: 0;
         color: $colorWhite;
         @include media(">=992px") {
           margin: 0 20px;
@@ -124,10 +133,17 @@
           }
           a {
             display: block;
-            background: url("../images/svg/facebook-header.svg");
+            background: url("../images/svg/facebook-header.svg") no-repeat;
             width: 24px;
             height: 24px;
           }
+        }
+        a {
+          @include linkRegular(16px, 19px);
+          color: $colorWhite;
+        }
+        a:hover {
+          color: $AccentRed;
         }
       }
     }
@@ -215,53 +231,61 @@
         list-style-type: none;
         margin: 0 20px;
         a {
-          @include linkNavbarMd;
+          color: $colorWhite;
+          @include linkBold(32px, 38px);
           @include media(">=992px") {
-            @include linkNavbarLg;
+            @include linkRegular(18px, 21px);
           }
         }
         a:hover {
-          color: $ActiveHover;
+          color: $AccentRed;
         }
       }
     }
   }
 }
 .bg-header-wrapper {
-  height: calc(100vh - 115px);
+  height: calc(100vh - 65px);
 }
 .bg-header {
   // overflow: hidden;
   .bg-text {
+    height: 644px;
+    display: flex;
+    align-items: center;
     @include media(">=992px") {
       background: url("../images/svg/frame-2.svg") no-repeat;
       width: 689px;
-      height: 644px;
-      position: relative;
     }
-    span {
-      display: block;
-      width: 200px;
-      height: 100px;
-      color: $colorWhite;
-      z-index: 4;
+    &::before {
+      background: url("../images/svg/symbol-long-leg.svg") no-repeat;
+      background-size: cover;
+      width: 430px;
+      height: 688px;
+      content: "";
       position: absolute;
-      top: calc(50% - 50px);
-      left: calc(50% - 100px);
+      top: calc(50% - 150px);
+      left: calc(50% - 273px);
+      @include media(">=992px") {
+        top: calc(50% - 165px);
+        left: calc(50% - 300px);
+      }
     }
-  }
-  .bg-text::after {
-    background: url("../images/svg/symbol-long-leg.svg") no-repeat;
-    background-size: cover;
-    width: 430px;
-    height: 688px;
-    content: "";
-    position: absolute;
-    top: calc(50% - 150px);
-    left: calc(50% - 300px);
-    @include media(">=992px") {
-      // top: calc(50% - 229px);
-      // left: calc(50% - 215px);
+    .slogan {
+      @include textRegular(38px, 45px, $colorWhite);
+      position: absolute;
+      z-index: 4;
+      text-align: center;
+      width: 300px;
+      height: 135px;
+      top: calc(50% - 110px);
+      left: calc(50% - 150px);
+      @include media(">=992px") {
+        width: 600px;
+        height: 90px;
+        top: calc(50% - 90px);
+        left: calc(50% - 300px);
+      }
     }
   }
   a {
@@ -282,7 +306,7 @@
     height: 50px;
   }
   h3 {
-    @include textHeadBolt;
+    @include textBold(14px, 17px, $Main);
     text-transform: uppercase;
   }
   .img-client {

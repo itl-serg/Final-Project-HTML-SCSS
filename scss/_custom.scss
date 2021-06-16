@@ -10,10 +10,27 @@ $container-max-widths: (
 
 $font-family-sans-serif: "ttnorms-regular", sans-serif;
 
+//Font size
+$font-size-base: 1.125rem;
+$line-height-base: 1.44;
+
+$font-size-sm: 1rem;
+$line-height-sm: 1.375;
+
+$font-size-lg: 1.3125rem;
+$line-height-lg: 1.428;
+
+$h1-font-size: 2.625rem;
+$h2-font-size: 2.625rem;
+
+$headings-margin-bottom: 20px;
+$headings-line-height: 1.18em;
+
 //Link color
 
-$link-color: $colorLinkWhite !default;
+$link-color: $Active !default;
 $link-decoration: none !default;
+$link-hover-color: $ActiveHover !default;
 
 //Margin bot
 $paragraph-margin-bottom: 0rem !default;
@@ -59,12 +76,6 @@ $LinearGradient: linear-gradient(
   rgba(245, 245, 250, 0) 0%,
   #f5f5fa 86.5%
 );
-
-//Font size
-$font-size-base: 1rem !default;
-$h2-font-size: $font-size-base * 2 !default;
-$h3-font-size: $font-size-base * 1.5 !default;
-$h4-font-size: $font-size-base * 1.125 !default;
 
 // $blue: #0d6efd !default;
 // $indigo: #6610f2 !default;

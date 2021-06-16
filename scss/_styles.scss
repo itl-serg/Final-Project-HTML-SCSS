@@ -37,11 +37,11 @@
       padding-bottom: 100px;
     }
     a {
-      @include LinkPublic;
+      @include LinkActive(18px, 21px);
       height: 64px;
       padding-left: 95px;
       @include media(">=992px") {
-        @include LinkMain;
+        @include LinkActive(24px, 28px);
         height: auto;
         padding-left: 0;
       }
@@ -107,10 +107,9 @@
       color: $ActiveHover;
     }
     p {
-      @include textPositionMob;
-      color: $colorWhite;
+      @include textRegular(16px, 22px, $colorWhite);
       @include media(">=992px") {
-        @include Paragraph(400);
+        @include textRegular(18px, 26px, $colorWhite);
       }
     }
   }
@@ -185,7 +184,7 @@
     }
     h4 {
       margin-bottom: 5px;
-      @include textName;
+      @include textRegular(18px, 21px, $TextGrey);
       padding-left: 80px;
       @include media(">=992px") {
         padding-left: 0px;
@@ -194,7 +193,7 @@
     p {
       padding-left: 80px;
       padding-bottom: 5px;
-      @include textPosition;
+      @include textRegular(16px, 22px, $TextGrey);
       @include media(">=992px") {
         padding-left: 0px;
       }
@@ -206,7 +205,8 @@
   .section-link {
     a {
       display: inline-block;
-      @include textSuccessfulCases;
+      @include linkBold(14px, 17px);
+      color: $AccentRed;
       margin-bottom: 68px;
       @include media(">=992px") {
         margin-bottom: 68px;
@@ -214,16 +214,16 @@
     }
   }
   p {
-    @include ParagraphSm;
+    @include textRegular(18px, 21px, $MainSoft);
     margin-bottom: 10px;
     @include media(">=992px") {
-      @include ParagraphLg;
+      @include textRegular(24px, 28px, $MainSoft);
       margin-bottom: 20px;
     }
   }
   a {
     display: inline-block;
-    @include UnorederedList(400);
+    @include linkRegular(18px, 26px);
     color: $TextGrey;
     margin-bottom: 41px;
     @include media(">=992px") {
@@ -251,7 +251,7 @@
 }
 .public-all {
   display: inline-block;
-  @include textButtonPublic;
+  @include linkRegular(14px, 17px);
   color: $Active;
   position: relative;
   text-transform: uppercase;
@@ -313,7 +313,7 @@
     }
     a {
       display: inline-block;
-      @include LinkPublic;
+      @include LinkActive(18px, 21px);
       margin-bottom: 10px;
     }
     a:hover {
@@ -321,8 +321,10 @@
     }
     time {
       display: block;
-      @include textdateTime;
+      @include textRegular(12px, 14px, $TextGrey);
+      letter-spacing: 1px;
       margin-bottom: 20px;
+      text-transform: uppercase;
     }
     p {
       display: none;
@@ -341,13 +343,15 @@
     position: absolute;
     bottom: 40px;
     left: calc(50% - 125px);
-    @include buttonPublic;
+    background: $Active;
+    box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+    border-radius: 12px;
     z-index: 5;
     span {
       position: absolute;
       top: 14px;
       left: 80px;
-      @include textButtonPublic;
+      @include linkRegular(14px, 17px);
     }
   }
 }

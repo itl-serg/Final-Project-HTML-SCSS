@@ -8,126 +8,54 @@
   background-image: $GradientRedText;
   font-family: "TT Norms", sans-serif;
 }
-@mixin buttonPublic {
-  background: $Active;
-  box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
-  border-radius: 12px;
-}
-@mixin textdateTime {
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: $TextGrey;
+@mixin textRegular($fs, $lh, $color) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
   font-family: "TT Norms", sans-serif;
+  font-weight: 400;
 }
-@mixin textButtonPublic {
-  font-size: 14px;
-  line-height: 17px;
+@mixin textMedium($fs, $lh, $color) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
   font-family: "TT Norms", sans-serif;
+  font-weight: 500;
 }
-@mixin textSuccessfulCases {
-  font-size: 14px;
-  line-height: 17px;
+@mixin textBold($fs, $lh, $color) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+  font-family: "TT Norms", sans-serif;
   font-weight: 600;
-  font-family: "TT Norms", sans-serif;
-  color: $AccentRed;
-  text-transform: uppercase;
 }
-@mixin textHeadBolt {
-  font-size: 14px;
-  line-height: 17px;
+@mixin linkRegular($fs, $lh) {
+  font-size: $fs;
+  line-height: $lh;
+  font-family: "TT Norms", sans-serif;
+  font-weight: 400;
+}
+@mixin linkMedium($fs, $lh) {
+  font-size: $fs;
+  line-height: $lh;
+  font-family: "TT Norms", sans-serif;
+  font-weight: 500;
+}
+@mixin linkBold($fs, $lh) {
+  font-size: $fs;
+  line-height: $lh;
+  font-family: "TT Norms", sans-serif;
   font-weight: 600;
-  color: $Main;
-  font-family: "TT Norms", sans-serif;
 }
-@mixin LinkRegular {
-  font-size: 16px;
-  line-height: 20px;
+@mixin LinkActive($fs, $lh) {
+  font-size: $fs;
+  line-height: $lh;
   color: $Active;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin LinkHover {
-  font-size: 16px;
-  line-height: 20px;
-  color: $AccentRed;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin textPosition {
-  font-size: 16px;
-  line-height: 22px;
-  color: $TextGrey;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin textPositionMob {
-  font-size: 16px;
-  line-height: 22px;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin Paragraph($fw) {
-  font-weight: $fw;
-  font-size: 18px;
-  line-height: 26px;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin ParagraphSm {
-  font-size: 18px;
-  line-height: 21px;
-  color: $MainSoft;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin linkNavbarLg {
-  font-size: 18px;
-  line-height: 21px;
-  color: $colorWhite;
-  font-family: "TT Norms", sans-serif;
-}
-
-@mixin UnorederedList($fw) {
-  font-weight: $fw;
-  font-size: 18px;
-  line-height: 26px;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin Orderedlist($fw) {
-  font-weight: $fw;
-  font-size: 18px;
-  line-height: 26px;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin LinkPublic {
-  font-size: 18px;
-  line-height: 21px;
-  color: $Active;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin textName {
-  font-size: 18px;
-  line-height: 21px;
-  color: $TextGrey;
   font-family: "TT Norms", sans-serif;
 }
 @mixin textMainBolt {
   color: $Main;
   line-height: 19px;
   font-weight: 600;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin ParagraphLg {
-  font-size: 24px;
-  line-height: 28px;
-  color: $MainSoft;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin LinkMain {
-  font-size: 24px;
-  line-height: 28px;
-  color: $Active;
-  font-family: "TT Norms", sans-serif;
-}
-@mixin linkNavbarMd {
-  font-size: 32px;
-  line-height: 38px;
-  color: $colorWhite;
   font-family: "TT Norms", sans-serif;
 }
