@@ -8,6 +8,16 @@
   background-image: $GradientRedText;
   font-family: "TT Norms", sans-serif;
 }
+
+@mixin textSectionGradient {
+  background: #ef8080;
+  background: -webkit-linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+  background: -moz-linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+  background: linear-gradient(to right, #ef8080 0%, #f0145a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @mixin textRegular($fs, $lh, $color) {
   font-size: $fs;
   line-height: $lh;

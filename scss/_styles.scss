@@ -1,8 +1,77 @@
 // Main
 .main-wrapper {
   background: $Gradinet;
+  border-radius: 0px 0px 12px 12px;
+  position: relative;
+  &:before {
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 10px;
+    background: $backgroundmischka;
+    border-radius: 0px 0px 12px 12px;
+    content: "";
+  }
+  &:after {
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    width: calc(100% - 80px);
+    background: $backgroundWhisper;
+    border-radius: 0px 0px 12px 12px;
+    height: 10px;
+    content: "";
+  }
 }
-.main-container {
+.main-container-primary {
+  margin-bottom: 80px;
+  padding-top: 80px;
+  .main-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 40px 10px 0;
+      border-right: 4px solid $SeparatorGrey;
+      &.active {
+        // border-color: ;
+        a {
+          @include textSectionGradient;
+        }
+      }
+    }
+    a {
+      @include linkBold(42px, 50px);
+      color: $TextGrey;
+      display: block;
+      width: 100%;
+      text-align: right;
+      &:hover {
+        @include textSectionGradient;
+      }
+    }
+  }
+  .main-info {
+    padding: 0 0 0 40px;
+    height: 310px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $colorWhite;
+    h2 {
+      @include textRegular(32px, 38px, $colorWhite);
+      margin-bottom: 20px;
+      display: block;
+    }
+    p {
+      @include textRegular(21px, 30px, $colorWhite);
+    }
+  }
+}
+.main-container-secondary {
   margin-bottom: 20px;
 
   @include media(">=992px") {
@@ -15,14 +84,14 @@
   }
   .main-container-link::after {
     content: "";
-    background: url("../images/svg/liink-arrow-grey.svg") no-repeat;
+    background: url("../images/sprite/sprite.svg#liink-arrow-grey") no-repeat;
     width: 12px;
     height: 12px;
     position: absolute;
-    top: calc(50% - 4px);
-    left: 60px;
+    top: calc(50% - 3px);
+    left: 68px;
   }
-  h3 {
+  h1 {
     @include textHeaderGradient(32px, 38px);
     margin-bottom: 20px;
     @include media(">=992px") {
@@ -256,15 +325,16 @@
   position: relative;
   text-transform: uppercase;
   &::after {
-    background: url("../images/svg/liink-arrow.svg");
+    background: url("../images/sprite/sprite.svg#liink-arrow");
     content: "";
     width: 12px;
     height: 12px;
     position: absolute;
     top: calc(50% - 6px);
-    left: 75px;
+    left: 80px;
   }
 }
+
 .public-all:hover {
   color: $ActiveHover;
 }
@@ -351,7 +421,8 @@
       position: absolute;
       top: 14px;
       left: 80px;
-      @include linkRegular(14px, 17px);
+      @include linkRegular(14px, 16.5px);
+      color: $colorWhite;
     }
   }
 }

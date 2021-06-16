@@ -148,7 +148,6 @@
       }
     }
   }
-
   // Burger menu
   .nav-list {
     input[type="checkbox"] {
@@ -248,7 +247,6 @@
   height: calc(100vh - 65px);
 }
 .bg-header {
-  // overflow: hidden;
   .bg-text {
     height: 644px;
     display: flex;
@@ -271,7 +269,7 @@
         left: calc(50% - 300px);
       }
     }
-    .slogan {
+    span {
       @include textRegular(38px, 45px, $colorWhite);
       position: absolute;
       z-index: 4;
@@ -289,7 +287,7 @@
     }
   }
   a {
-    background: url("../images/svg/scroll-down.svg") no-repeat;
+    background: url("../images/sprite/sprite.svg#scroll-down") no-repeat;
     position: absolute;
     width: 42px;
     height: 42px;
@@ -363,7 +361,7 @@
       color: $ActiveHover;
     }
     .facebook-footer {
-      background: url("../images/svg/facebook-footer.svg") no-repeat;
+      background: url("../images/sprite/sprite.svg#facebook-footer") no-repeat;
       width: 38px;
       height: 38px;
       margin: auto;
