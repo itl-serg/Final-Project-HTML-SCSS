@@ -526,19 +526,9 @@
   overflow: hidden;
 }
 // End article
-
-.section-publications {
-  background: $BgGrey;
-  border-radius: 12px 12px 0px 0px;
-
-  .bg-publications-secondary {
-    // height: auto;
-    &:after {
-      background: none;
-    }
-    p {
-      margin-bottom: 40px;
-    }
+.bg-none {
+  &:after {
+    background: none;
   }
 }
 
