@@ -1,15 +1,16 @@
 @mixin textHeaderGradient($fs, $lh) {
   font-size: $fs;
   line-height: $lh;
-  font-weight: 600;
-  color: transparent;
+  font-weight: bold;
+  font-family: "ttnorms-bold", sans-serif;
+  background: #f0145a;
+  background: -webkit-linear-gradient(to right, #f0145a 0%, #ef8080 100%);
+  background: -moz-linear-gradient(to right, #f0145a 0%, #ef8080 100%);
+  background: linear-gradient(to right, #f0145a 0%, #ef8080 100%);
   -webkit-background-clip: text;
-  background-clip: text;
-  background-image: $GradientRedText;
-  font-family: "TT Norms", sans-serif;
+  -webkit-text-fill-color: transparent;
 }
-
-@mixin textSectionGradient {
+@mixin textSectionGradientHover {
   background: #ef8080;
   background: -webkit-linear-gradient(to right, #ef8080 0%, #f0145a 100%);
   background: -moz-linear-gradient(to right, #ef8080 0%, #f0145a 100%);
@@ -17,55 +18,55 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 @mixin textRegular($fs, $lh, $color) {
   font-size: $fs;
   line-height: $lh;
   color: $color;
-  font-family: "TT Norms", sans-serif;
+  font-family: "ttnorms-regular", sans-serif;
   font-weight: 400;
 }
 @mixin textMedium($fs, $lh, $color) {
   font-size: $fs;
   line-height: $lh;
   color: $color;
-  font-family: "TT Norms", sans-serif;
-  font-weight: 500;
+  font-family: "ttnorms-medium", sans-serif;
+  font-weight: 600;
 }
 @mixin textBold($fs, $lh, $color) {
   font-size: $fs;
   line-height: $lh;
   color: $color;
-  font-family: "TT Norms", sans-serif;
-  font-weight: 600;
+  font-family: "ttnorms-bold", sans-serif;
+  font-weight: bold;
 }
 @mixin linkRegular($fs, $lh) {
   font-size: $fs;
   line-height: $lh;
-  font-family: "TT Norms", sans-serif;
+  font-family: "ttnorms-regular", sans-serif;
   font-weight: 400;
 }
 @mixin linkMedium($fs, $lh) {
   font-size: $fs;
   line-height: $lh;
-  font-family: "TT Norms", sans-serif;
-  font-weight: 500;
+  font-family: "ttnorms-medium", sans-serif;
+  font-weight: 600;
 }
 @mixin linkBold($fs, $lh) {
   font-size: $fs;
   line-height: $lh;
-  font-family: "TT Norms", sans-serif;
-  font-weight: 600;
+  font-family: "ttnorms-bold", sans-serif;
+  font-weight: bold;
 }
 @mixin LinkActive($fs, $lh) {
   font-size: $fs;
   line-height: $lh;
   color: $Active;
-  font-family: "TT Norms", sans-serif;
+  font-family: "ttnorms-regular", sans-serif;
 }
-@mixin textMainBolt {
+@mixin textFooterBolt($fs, $lh) {
+  font-size: $fs;
+  line-height: $lh;
   color: $Main;
-  line-height: 19px;
-  font-weight: 600;
-  font-family: "TT Norms", sans-serif;
+  font-weight: bold;
+  font-family: "ttnorms-bold", sans-serif;
 }

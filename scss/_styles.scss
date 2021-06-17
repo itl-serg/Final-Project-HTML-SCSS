@@ -25,55 +25,98 @@
   }
 }
 .main-container-primary {
-  margin-bottom: 80px;
-  padding-top: 80px;
+  margin-bottom: 45px;
+  padding-top: 40px;
+  @include media(">=992px") {
+    padding-top: 80px;
+    margin-bottom: 80px;
+  }
+
   .main-list {
-    padding: 0;
-    margin: 0;
     list-style: none;
     li {
-      display: flex;
-      justify-content: flex-end;
-      padding: 10px 40px 10px 0;
-      border-right: 4px solid $SeparatorGrey;
-      &.active {
-        // border-color: ;
-        a {
-          @include textSectionGradient;
+      @include media(">=992px") {
+        display: flex;
+        justify-content: flex-end;
+      }
+      &:nth-child(2),
+      &:nth-child(3),
+      &:last-child {
+        display: none;
+        @include media(">=992px") {
+          display: flex;
         }
       }
     }
+
     a {
-      @include linkBold(42px, 50px);
+      @include linkBold(14px, 17px);
       color: $TextGrey;
-      display: block;
-      width: 100%;
-      text-align: right;
+      display: inline-block;
+      padding: 10px 40px 10px 0;
+      text-transform: uppercase;
+      @include media(">=992px") {
+        @include linkBold(42px, 50px);
+        border-right: 4px solid $SeparatorGrey;
+        text-align: right;
+        text-transform: none;
+      }
       &:hover {
-        @include textSectionGradient;
+        @include textSectionGradientHover;
+        border-color: $backgroundAccentRed;
+      }
+      &.active {
+        border-color: $backgroundAccentRed;
+        @include textSectionGradientHover;
       }
     }
   }
   .main-info {
-    padding: 0 0 0 40px;
-    height: 310px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    color: $colorWhite;
+    @include media(">=992px") {
+      padding: 0 0 0 40px;
+      height: 310px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
     h2 {
-      @include textRegular(32px, 38px, $colorWhite);
-      margin-bottom: 20px;
-      display: block;
+      @include textRegular(22px, 26px, $colorWhite);
+      margin-bottom: 15px;
+      @include media(">=992px") {
+        @include textRegular(32px, 38px, $colorWhite);
+        margin-bottom: 20px;
+      }
     }
     p {
-      @include textRegular(21px, 30px, $colorWhite);
+      @include textRegular(18px, 26px, $colorWhite);
+      @include media(">=992px") {
+        @include textRegular(21px, 30px, $colorWhite);
+      }
+    }
+    span {
+      display: block;
+      a {
+        background: $backgroundActive;
+        opacity: 0.2;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        text-align: center;
+        margin: 20px 7px 0;
+        display: inline-block;
+        &.active {
+          opacity: inherit;
+        }
+      }
+      @include media(">=992px") {
+        display: none;
+      }
     }
   }
 }
 .main-container-secondary {
   margin-bottom: 20px;
-
   @include media(">=992px") {
     margin-bottom: 40px;
   }
@@ -101,23 +144,28 @@
   }
   .main-link-text {
     padding-bottom: 60px;
+
     @include media(">=992px") {
       padding-top: 112px;
       padding-bottom: 100px;
     }
     a {
+      margin: auto;
+      position: relative;
+      margin-bottom: 10px;
       @include LinkActive(18px, 21px);
       height: 64px;
-      padding-left: 95px;
+      padding-left: 74px;
+      display: flex;
+      align-items: center;
       @include media(">=992px") {
         @include LinkActive(24px, 28px);
         height: auto;
         padding-left: 0;
+        margin-bottom: 15px;
       }
-      position: relative;
-      margin-bottom: 15px;
-      display: block;
     }
+
     a:after {
       content: "";
       position: absolute;
@@ -125,12 +173,12 @@
       height: 64px;
       background-color: $backgroundWhite;
       border-radius: 24px;
-      top: -15px;
+      top: 0;
       left: 0;
       @include media(">=992px") {
         width: 92px;
         height: 92px;
-        top: -102px;
+        top: -112px;
       }
     }
     a:before {
@@ -139,13 +187,13 @@
       background-size: cover;
       width: 44px;
       height: 44px;
-      top: -4px;
+      top: 11px;
       left: 9px;
       z-index: 3;
       @include media(">=992px") {
         width: 64px;
         height: 64px;
-        top: -90px;
+        top: -100px;
         left: 14px;
       }
     }
@@ -166,9 +214,9 @@
     }
     .iconfinder-6::before {
       background: url("../images/sprite/sprite.svg#iconfinder-6") no-repeat;
-      top: -6px;
+      top: 9px;
       @include media(">=992px") {
-        top: -83px;
+        top: -93px;
         left: 21px;
       }
     }
@@ -273,6 +321,7 @@
   margin-bottom: 36px;
   .section-link {
     a {
+      text-transform: uppercase;
       display: inline-block;
       @include linkBold(14px, 17px);
       color: $AccentRed;
@@ -320,7 +369,8 @@
 }
 .public-all {
   display: inline-block;
-  @include linkRegular(14px, 17px);
+  @include linkBold(14px, 17px);
+  letter-spacing: 1px;
   color: $Active;
   position: relative;
   text-transform: uppercase;
@@ -331,7 +381,7 @@
     height: 12px;
     position: absolute;
     top: calc(50% - 6px);
-    left: 80px;
+    right: -13px;
   }
 }
 
@@ -364,7 +414,9 @@
   .publications-section {
     flex-wrap: nowrap;
     div {
-      margin-bottom: 40px;
+      @include media(">=992px") {
+        margin-bottom: 40px;
+      }
     }
     width: 100%;
 
@@ -378,10 +430,10 @@
     img {
       display: block;
       width: 100%;
-      margin-bottom: 20px;
       border-radius: 8px 8px 0px 0px;
     }
     a {
+      padding-top: 20px;
       display: inline-block;
       @include LinkActive(18px, 21px);
       margin-bottom: 10px;
