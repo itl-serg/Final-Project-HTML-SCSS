@@ -53,6 +53,12 @@
     margin-top: 50px;
   }
 }
+.header-navbar-secondary {
+  margin-bottom: 20px;
+  @include media(">=992px") {
+    margin-bottom: 58px;
+  }
+}
 .logo-header {
   .logo {
     display: block;
@@ -63,6 +69,18 @@
     @include media(">=992px") {
       height: 62px;
       width: 155px;
+    }
+  }
+  .logo-black-subsection {
+    display: block;
+    background: url("../images/svg/logo-black-subsection-mobile.svg") no-repeat;
+    width: 222px;
+    height: 31px;
+    @include media(">=1170px") {
+      background: url("../images/svg/logo-black-subsection.svg") no-repeat;
+      background-size: cover;
+      width: 444px;
+      height: 63px;
     }
   }
 }
@@ -84,161 +102,206 @@
           letter-spacing: 1px;
           @include linkRegular(12px, 14px);
         }
-        a:after {
-          background: $backgroundAccentRed;
-          border-radius: 8px;
-          width: 29px;
-          height: 24px;
-          content: "";
-          position: absolute;
-          top: -5px;
-          left: -6px;
-          z-index: -1;
-          display: none;
-        }
-        a.activ:after {
-          display: inline-block;
-        }
       }
-      li:hover > a::after {
+      a:after {
+        background: $backgroundAccentRed;
+        border-radius: 8px;
+        width: 29px;
+        height: 24px;
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -6px;
+        z-index: -1;
+        display: none;
+      }
+      a.activ:after {
         display: inline-block;
       }
     }
-    .header-contact {
-      display: flex;
-      justify-content: flex-end;
-      flex-wrap: nowrap;
+    li:hover > a::after {
+      display: inline-block;
+    }
+    .language-list-secondary {
       li {
-        margin: 0;
-        color: $colorWhite;
-        @include media(">=992px") {
-          margin: 0 20px;
-        }
-        &:first-child {
-          display: none;
-          @include media(">=992px") {
-            display: block;
-          }
-        }
-        &:nth-child(2) {
-          list-style-type: none;
-          @include media(">=992px") {
-            list-style-type: disc;
-          }
-        }
-        &:last-child {
-          display: none;
-          @include media(">=992px") {
-            display: block;
-          }
-          a {
-            display: block;
-            background: url("../images/svg/facebook-header.svg") no-repeat;
-            width: 24px;
-            height: 24px;
-          }
-        }
         a {
-          @include linkRegular(16px, 19px);
+          color: $TextGrey;
+          font-weight: bold;
+        }
+        a.activ {
           color: $colorWhite;
         }
         a:hover {
-          color: $AccentRed;
+          color: $colorWhite;
         }
       }
     }
   }
-  // Burger menu
-  .nav-list {
-    input[type="checkbox"] {
+  .header-contact {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    li {
+      margin: 0;
+      color: $colorWhite;
+      @include media(">=992px") {
+        margin: 0 20px;
+      }
+      &:first-child {
+        display: none;
+        @include media(">=992px") {
+          display: block;
+        }
+      }
+      &:nth-child(2) {
+        list-style-type: none;
+        @include media(">=992px") {
+          list-style-type: disc;
+        }
+      }
+      &:last-child {
+        display: none;
+        @include media(">=992px") {
+          display: block;
+        }
+        a {
+          display: block;
+          background: url("../images/svg/facebook-header.svg") no-repeat;
+          width: 24px;
+          height: 24px;
+        }
+      }
+      a {
+        @include linkRegular(16px, 19px);
+        color: $colorWhite;
+      }
+      a:hover {
+        color: $AccentRed;
+      }
+    }
+  }
+  .header-contact-secondary {
+    li {
+      a {
+        color: $TextGrey;
+      }
+      &:last-child {
+        a {
+          display: block;
+          background: url("../images/svg/facebook-header-grey.svg") no-repeat;
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+// Burger menu
+.nav-list {
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked ~ .header-nav-list {
+    transform: none;
+  }
+  input[type="checkbox"]:checked + .burger {
+    span:first-child {
+      transform: rotate(135deg);
+      top: 21px;
+    }
+    span:nth-child(2) {
       display: none;
     }
-    input[type="checkbox"]:checked ~ .header-nav-list {
-      transform: none;
+    span:last-child {
+      transform: rotate(-135deg);
+      top: 21px;
     }
-    input[type="checkbox"]:checked + .burger {
-      span:first-child {
-        transform: rotate(135deg);
-        top: 21px;
-      }
-      span:nth-child(2) {
-        display: none;
-      }
-      span:last-child {
-        transform: rotate(-135deg);
-        top: 21px;
-      }
-    }
-    .burger {
+  }
+  .burger {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 63px;
+    right: 12px;
+    z-index: 10;
+    span {
+      transition: all 1s ease-in-out;
       position: absolute;
-      width: 32px;
-      height: 32px;
-      top: 63px;
-      right: 12px;
-      z-index: 10;
+      left: 7px;
+      height: 2px;
+      width: 18px;
+      background-color: $backgroundWhite;
+      &:first-child {
+        top: 6px;
+      }
+      &:nth-child(2) {
+        top: 14px;
+      }
+      &:last-child {
+        top: 22px;
+      }
+    }
+    @include media(">=992px") {
+      display: none;
+    }
+    &.burger-secondary {
       span {
-        transition: all 1s ease-in-out;
-        position: absolute;
-        left: 7px;
-        height: 2px;
-        width: 18px;
-        background-color: $backgroundWhite;
-        &:first-child {
-          top: 6px;
-        }
-        &:nth-child(2) {
-          top: 14px;
-        }
-        &:last-child {
-          top: 22px;
-        }
-      }
-      @include media(">=992px") {
-        display: none;
+        background-color: $Main;
       }
     }
-    .burger:hover {
-      cursor: pointer;
+  }
+  .burger:hover {
+    cursor: pointer;
+  }
+  .header-nav-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    transform: translate(0, -100%);
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    @include media(">=992px") {
+      position: static;
+      flex-direction: row;
+      align-items: flex-end;
+      height: auto;
+      background: none;
+      transform: none;
+      transition: none;
+      justify-content: flex-end;
+      max-width: 1170px;
+      margin: auto;
     }
-    .header-nav-list {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: space-around;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.9);
-      transform: translate(0, -100%);
-      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      @include media(">=992px") {
-        position: static;
-        flex-direction: row;
-        align-items: flex-end;
-        height: auto;
-        background: none;
-        transform: none;
-        transition: none;
-        justify-content: flex-end;
-        max-width: 1170px;
-        margin: auto;
-      }
-      li {
-        list-style-type: none;
-        margin: 0 20px;
-        a {
-          color: $colorWhite;
-          @include linkBold(32px, 38px);
-          @include media(">=992px") {
-            @include linkRegular(18px, 21px);
-          }
+    li {
+      list-style-type: none;
+      margin: 0 20px;
+      a {
+        color: $colorWhite;
+        @include linkBold(32px, 38px);
+        @include media(">=992px") {
+          @include linkRegular(18px, 21px);
         }
-        a:hover {
+
+        &.activ {
           color: $AccentRed;
+          border-bottom: 2px solid $AccentRed;
+          padding-bottom: 1px;
         }
+      }
+      a:hover {
+        color: $AccentRed;
+      }
+    }
+    &.publications-nav-last {
+      a {
+        color: $Active;
       }
     }
   }
@@ -298,96 +361,81 @@
 }
 // End header
 
-// Clients
-.clients-wrapper {
-  .client-head {
-    height: 50px;
-  }
-  h3 {
-    @include textBold(14px, 17px, $Main);
-    text-transform: uppercase;
-  }
-  .img-client {
-    width: 100%;
-    height: 100%;
-  }
-}
-// End clients
-
 //Footer
 .footer-wpapper {
   color: $TextGrey;
   height: 151px;
-  .footer-contact {
-    padding: 32px 0 40px;
+  background: $BgGrey;
+}
+.footer-contact {
+  border-top: 4px solid $SeparatorGrey;
+  padding: 32px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @include media(">=992px") {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+  ul {
+    padding: 0;
+    height: 100%;
     @include media(">=992px") {
       display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: flex-start;
     }
-    ul {
-      padding: 0;
-      height: 100%;
+    .footer-text {
+      @include textFooterBolt(16px, 19px);
+    }
+    li {
+      margin-bottom: 20px;
+      margin-right: 0px;
+      list-style-type: none;
+
       @include media(">=992px") {
-        display: flex;
+        margin-right: 40px;
+        margin-bottom: 0px;
+        // display: flex;
+        // align-items: center;
+        list-style-type: disc;
       }
-      .footer-text {
+      a {
+        color: $Active;
+        display: block;
+      }
+      a:hover {
+        color: $ActiveHover;
+      }
+      .facebook-footer {
+        background: url("../images/sprite/sprite.svg#facebook-footer") no-repeat;
+        width: 38px;
+        height: 38px;
+        margin: auto;
+      }
+      .footer-company {
+        text-align: center;
+        @include media(">=992px") {
+          text-align: end;
+        }
+      }
+      &:first-child {
+        list-style-type: none;
         @include textFooterBolt(16px, 19px);
       }
-      li {
-        margin-bottom: 20px;
-        margin-right: 0px;
-        list-style-type: none;
 
-        @include media(">=992px") {
-          margin-right: 40px;
-          margin-bottom: 0px;
-
-          // display: flex;
-          // align-items: center;
-          list-style-type: disc;
-        }
-        a {
-          color: $Active;
-          display: block;
-        }
-        a:hover {
-          color: $ActiveHover;
-        }
-        .facebook-footer {
-          background: url("../images/sprite/sprite.svg#facebook-footer")
-            no-repeat;
-          width: 38px;
-          height: 38px;
-          margin: auto;
-        }
-        .footer-company {
-          text-align: center;
-          @include media(">=992px") {
-            text-align: end;
-          }
-        }
-        &:first-child {
-          list-style-type: none;
-          @include textFooterBolt(16px, 19px);
-        }
-
-        &:nth-child(3) {
-          @include linkBold(16px, 19px);
-        }
-        .footer-text-map {
-          @include linkBold(12px, 14px);
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          width: 100%;
-        }
+      &:nth-child(3) {
+        @include linkBold(16px, 19px);
+      }
+      .footer-text-map {
+        @include linkBold(12px, 14px);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        width: 100%;
       }
     }
   }
 }
+
 // End footer
