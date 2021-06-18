@@ -496,6 +496,13 @@
         padding-top: 20px;
         border-top: 4px solid $SeparatorGrey;
       }
+      .external-reference {
+        display: inline;
+        @include textRegular(16px, 22px, $colorBlack);
+      }
+      .external-reference:hover {
+        color: $ActiveHover;
+      }
     }
   }
 }
@@ -526,17 +533,65 @@
   overflow: hidden;
 }
 // End article
+
+// Article publications (page: publications)
+.btn-publications {
+  width: 260px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: $SeparatorGrey;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-around;
+  span {
+    border-radius: 10px;
+    width: 127px;
+    height: 36px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      text-transform: uppercase;
+      display: block;
+      @include linkMedium(18px, 21px);
+      color: $Main;
+    }
+  }
+  .activ,
+  span:hover {
+    background: $colorWhite;
+  }
+}
 .bg-none {
   &:after {
     background: none;
   }
-}
-
-//кнопка
-.more-publications-secondary {
-  position: static;
-  span {
-    display: block;
-    z-index: 4;
+  .publications-section-secondary {
+    div:nth-child(3) {
+      display: none;
+      @include media(">=992px") {
+        display: block;
+      }
+    }
+    div:last-child {
+      display: none;
+      @include media(">=992px") {
+        display: block;
+      }
+    }
   }
 }
+.more-publications-secondary {
+  position: static;
+  display: block;
+  margin: 40px auto;
+  span {
+    position: static;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+// End article publications (page: publications)

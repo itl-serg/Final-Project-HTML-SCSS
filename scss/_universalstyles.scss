@@ -264,7 +264,7 @@
     z-index: 9;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     transform: translate(0, -100%);
     transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     @include media(">=992px") {
@@ -281,10 +281,16 @@
     }
     li {
       list-style-type: none;
-      margin: 0 20px;
+      margin: 20px 0;
+      @include media(">=992px") {
+        margin: 0 20px;
+      }
+
       a {
+        display: block;
         color: $colorWhite;
-        @include linkBold(32px, 38px);
+        @include linkBold(28px, 30px);
+
         @include media(">=992px") {
           @include linkRegular(18px, 21px);
         }
@@ -301,7 +307,10 @@
     }
     &.publications-nav-last {
       a {
-        color: $Active;
+        color: $colorWhite;
+        @include media(">=992px") {
+          color: $Active;
+        }
       }
     }
   }
@@ -397,13 +406,11 @@
       @include media(">=992px") {
         margin-right: 40px;
         margin-bottom: 0px;
-        // display: flex;
-        // align-items: center;
         list-style-type: disc;
       }
       a {
-        color: $Active;
         display: block;
+        color: $Active;
       }
       a:hover {
         color: $ActiveHover;
