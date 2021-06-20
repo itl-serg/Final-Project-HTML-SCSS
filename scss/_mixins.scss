@@ -30,14 +30,14 @@
   line-height: $lh;
   color: $color;
   font-family: "ttnorms-medium", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 @mixin textBold($fs, $lh, $color) {
   font-size: $fs;
   line-height: $lh;
   color: $color;
   font-family: "ttnorms-bold", sans-serif;
-  font-weight: bold;
+  font-weight: 700;
 }
 @mixin linkRegular($fs, $lh) {
   font-size: $fs;
@@ -55,7 +55,7 @@
   font-size: $fs;
   line-height: $lh;
   font-family: "ttnorms-bold", sans-serif;
-  font-weight: bold;
+  font-weight: 700;
 }
 @mixin LinkActive($fs, $lh) {
   font-size: $fs;
@@ -67,6 +67,6 @@
   font-size: $fs;
   line-height: $lh;
   color: $Main;
-  font-weight: bold;
+  font-weight: 700;
   font-family: "ttnorms-bold", sans-serif;
 }

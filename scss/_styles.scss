@@ -594,9 +594,6 @@
 // End article publications (page: publications)
 
 // Publication entry (page: publications entry)
-
-.publication-entry {
-}
 .publications-entry-section {
   max-width: 1320px;
   margin: auto;
@@ -618,9 +615,10 @@
       }
     }
     p {
-      margin: 20px 0;
+      @include textRegular(18px, 26px, $colorBlack);
+      margin-bottom: 20px;
       @include media(">=992px") {
-        margin: 40px 0;
+        margin-bottom: 40px;
       }
     }
     .publications-text {
@@ -631,6 +629,82 @@
       @include media(">=992px") {
         padding-top: 40px;
       }
+    }
+    strong {
+      display: block;
+      margin-bottom: 18px;
+      @include textMedium(24px, 28px, $MainAlt);
+    }
+    ol {
+      margin: 18px 0 10px;
+      @include media(">=992px") {
+        margin-bottom: 15px;
+      }
+      li {
+        @include textRegular(18px, 26px, $AccentRed);
+        padding-bottom: 10px;
+        p {
+          color: $colorBlack;
+        }
+      }
+    }
+  }
+  h2 {
+    padding-left: 10px;
+    margin-bottom: 40px;
+    @include textHeaderGradient(32px, 38px);
+    @include media(">=992px") {
+      padding-left: 0;
+      @include textHeaderGradient(42px, 50px);
+    }
+  }
+}
+.block-for-advertising {
+  span {
+    display: block;
+    @include textRegular(16px, 22px, $TextGrey);
+    text-align: center;
+    margin: 15px 0 20px;
+    @include media(">=992px") {
+      margin: 10px 0 40px;
+    }
+  }
+}
+.publications-entry-ico {
+  border-top: 4px solid $SeparatorGrey;
+  display: flex;
+  padding-top: 20px;
+  margin: 0 20px 40px;
+
+  justify-content: center;
+  @include media(">=992px") {
+    margin-bottom: 60px;
+    justify-content: flex-start;
+  }
+  a {
+    width: 42px;
+    height: 42px;
+    background: $BgGrey;
+    border-radius: 12px;
+    position: relative;
+    margin: 0 10px 0 0;
+
+    span {
+      width: 24px;
+      height: 24px;
+      display: block;
+      position: absolute;
+      top: calc(50% - 12px);
+      left: calc(50% - 12px);
+    }
+    .facebook-entry {
+      background: url("../images/sprite/sprite.svg#facebook-entry") no-repeat;
+    }
+    .twitter-entry {
+      background: url("../images/sprite/sprite.svg#twitter-entry") no-repeat;
+    }
+    .linkedin-entry {
+      background: url("../images/sprite/sprite.svg#linkedin-entry") no-repeat;
     }
   }
 }
