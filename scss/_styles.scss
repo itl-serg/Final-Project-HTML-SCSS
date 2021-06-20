@@ -411,6 +411,20 @@
     color: $ActiveHover;
   }
 }
+.bg-bottom-article-wrapper {
+  &:after {
+    @include media(">=992px") {
+      background: $LinearGradient;
+      content: "";
+      position: absolute;
+      height: 200px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 3;
+    }
+  }
+}
 .publications-wrapper {
   overflow: hidden;
   max-width: 1320px;
@@ -423,18 +437,6 @@
     flex-direction: row;
     align-items: stretch;
     max-height: 720px;
-  }
-  &:after {
-    @include media(">=992px") {
-      background: $LinearGradient;
-      content: "";
-      position: absolute;
-      height: 200px;
-      left: 0px;
-      right: 0px;
-      bottom: 0px;
-      z-index: 3;
-    }
   }
 }
 .publications-section {
@@ -502,12 +504,8 @@
     }
   }
 }
-
 .btn-more-publications {
   padding-bottom: 40px;
-  @include media(">=992px") {
-    padding-bottom: 0;
-  }
   .more-publications {
     display: flex;
     width: 250px;
@@ -525,13 +523,24 @@
       bottom: 40px;
       left: calc(50% - 125px);
       z-index: 5;
-      margin-bottom: 0;
     }
   }
 }
 // End article
 
 // Article publications (page: publications)
+.page-publications-wrapper {
+  max-height: 100%;
+  .page-publications-section {
+    .page-publications-content:nth-child(3),
+    .page-publications-content:last-child {
+      display: none;
+      @include media(">=992px") {
+        display: block;
+      }
+    }
+  }
+}
 .btn-publications {
   width: 260px;
   height: 40px;
@@ -560,37 +569,31 @@
     background: $colorWhite;
   }
 }
-// .bg-none {
-//   &:after {
-//     background: none;
-//   }
-//   .publications-section-secondary {
-//     div:nth-child(3) {
-//       display: none;
-//       @include media(">=992px") {
-//         display: block;
-//       }
-//     }
-//     div:last-child {
-//       display: none;
-//       @include media(">=992px") {
-//         display: block;
-//       }
-//     }
-//   }
-// }
-// .more-publications-secondary {
-//   position: static;
-//   display: block;
-//   margin: 40px auto;
-//   span {
-//     position: static;
-//     display: flex;
-//     height: 100%;
-//     align-items: center;
-//     justify-content: center;
-//   }
-// }
+.page-publications-content {
+  p {
+    display: none;
+    @include media(">=992px") {
+      display: block;
+      padding-top: 20px;
+      border-top: 4px solid $SeparatorGrey;
+      margin: 0 20px;
+    }
+    .external-reference {
+      display: inline;
+      @include textRegular(16px, 22px, $colorBlack);
+    }
+    .external-reference:hover {
+      color: $ActiveHover;
+    }
+  }
+}
+.btn-more-publications {
+  .more-page-publications {
+    @include media(">=992px") {
+      position: static;
+    }
+  }
+}
 // End article publications (page: publications)
 
 // Publication entry (page: publications entry)
