@@ -532,34 +532,34 @@
 // End article
 
 // Article publications (page: publications)
-// .btn-publications {
-//   width: 260px;
-//   height: 40px;
-//   border-radius: 12px;
-//   background-color: $SeparatorGrey;
-//   margin: 0 auto 40px;
-//   display: flex;
-//   justify-content: space-around;
-//   span {
-//     border-radius: 10px;
-//     width: 127px;
-//     height: 36px;
-//     margin: auto;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     a {
-//       text-transform: uppercase;
-//       display: block;
-//       @include linkMedium(18px, 21px);
-//       color: $Main;
-//     }
-//   }
-//   .activ,
-//   span:hover {
-//     background: $colorWhite;
-//   }
-// }
+.btn-publications {
+  width: 260px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: $SeparatorGrey;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-around;
+  span {
+    border-radius: 10px;
+    width: 127px;
+    height: 36px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      text-transform: uppercase;
+      display: block;
+      @include linkMedium(18px, 21px);
+      color: $Main;
+    }
+  }
+  .activ,
+  span:hover {
+    background: $colorWhite;
+  }
+}
 // .bg-none {
 //   &:after {
 //     background: none;
@@ -616,9 +616,9 @@
     }
     p {
       @include textRegular(18px, 26px, $colorBlack);
-      margin-bottom: 20px;
+      padding-bottom: 20px;
       @include media(">=992px") {
-        margin-bottom: 40px;
+        padding-bottom: 40px;
       }
     }
     .publications-text {
@@ -644,13 +644,15 @@
         @include textRegular(18px, 26px, $AccentRed);
         padding-bottom: 10px;
         p {
+          margin: 0;
+          padding: 0;
           color: $colorBlack;
         }
       }
     }
   }
   h2 {
-    padding-left: 10px;
+    padding-left: 20px;
     margin-bottom: 40px;
     @include textHeaderGradient(32px, 38px);
     @include media(">=992px") {

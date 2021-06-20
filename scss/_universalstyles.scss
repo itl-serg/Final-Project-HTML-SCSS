@@ -18,7 +18,6 @@
 }
 
 // Header
-
 .header-wrapper {
   height: 100vh;
   width: 100%;
@@ -285,7 +284,6 @@
       @include media(">=992px") {
         margin: 0 20px;
       }
-
       a {
         display: block;
         color: $colorWhite;
@@ -444,5 +442,4 @@
     }
   }
 }
-
 // End footer
