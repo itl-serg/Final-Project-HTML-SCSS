@@ -328,38 +328,41 @@
     background: $BgGrey;
     border-radius: 12px;
 
-    .section-link {
-      a {
-        padding-top: 20px;
-        text-transform: uppercase;
-        display: inline-block;
-        @include linkBold(14px, 17px);
-        color: $AccentRed;
-        margin-bottom: 68px;
-        @include media(">=992px") {
-          margin-bottom: 68px;
-        }
-      }
-    }
-    p {
-      @include textRegular(18px, 21px, $MainSoft);
-      margin-bottom: 10px;
-      @include media(">=992px") {
-        @include textRegular(24px, 28px, $MainSoft);
-        margin-bottom: 20px;
-      }
-    }
-    a {
-      display: inline-block;
-      @include linkRegular(18px, 26px);
-      color: $TextGrey;
-      margin-bottom: 41px;
-      @include media(">=992px") {
-        margin-bottom: 40px;
-      }
-    }
     div {
       border: 1px solid $colorWhite;
+      @include media(">=992px") {
+        align-self: stretch;
+      }
+      .section-link {
+        a {
+          padding-top: 20px;
+          text-transform: uppercase;
+          display: inline-block;
+          @include linkBold(14px, 17px);
+          color: $AccentRed;
+          margin-bottom: 68px;
+          @include media(">=992px") {
+            margin-bottom: 68px;
+          }
+        }
+      }
+      p {
+        @include textRegular(18px, 21px, $MainSoft);
+        margin-bottom: 10px;
+        @include media(">=992px") {
+          @include textRegular(24px, 28px, $MainSoft);
+          margin-bottom: 20px;
+        }
+      }
+      span {
+        display: inline-block;
+        @include linkRegular(18px, 26px);
+        color: $TextGrey;
+        margin-bottom: 41px;
+        @include media(">=992px") {
+          margin-bottom: 40px;
+        }
+      }
     }
   }
 }
