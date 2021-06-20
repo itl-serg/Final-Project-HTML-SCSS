@@ -80,7 +80,7 @@
       flex-direction: column;
     }
 
-    h2 {
+    h1 {
       @include textRegular(22px, 26px, $colorWhite);
       margin-bottom: 15px;
       @include media(">=992px") {
@@ -134,7 +134,7 @@
     top: calc(50% - 3px);
     left: 68px;
   }
-  h1 {
+  h2 {
     @include textHeaderGradient(32px, 38px);
     margin-bottom: 20px;
     @include media(">=992px") {
@@ -235,7 +235,7 @@
 
 // Section
 .gallery-wrapper {
-  margin-bottom: 50px;
+  margin: 40px 0 50px;
   @include media(">=992px") {
     margin: 0 60px 55px;
   }
@@ -262,6 +262,7 @@
   }
 }
 .carousel-content {
+  max-width: 1320px;
   background: $BgGrey;
   border-radius: 12px;
   @include media(">=992px") {
@@ -301,7 +302,7 @@
         @include textHeaderGradient(42px, 50px);
       }
     }
-    h4 {
+    p {
       margin-bottom: 5px;
       @include textRegular(18px, 21px, $TextGrey);
       padding-left: 80px;
@@ -309,7 +310,8 @@
         padding-left: 0px;
       }
     }
-    p {
+    span {
+      display: block;
       padding-left: 80px;
       padding-bottom: 5px;
       @include textRegular(16px, 22px, $TextGrey);
@@ -377,6 +379,9 @@
 .article-wrapper {
   padding-top: 40px;
   background: $BgGrey;
+  position: relative;
+  margin: auto;
+
   h3 {
     background: $colorWhite;
     @include textHeaderGradient(32px, 38px);
@@ -385,40 +390,31 @@
       @include textHeaderGradient(42px, 50px);
     }
   }
-}
-.public-all {
-  display: inline-block;
-  @include linkBold(14px, 17px);
-  letter-spacing: 1px;
-  color: $Active;
-  position: relative;
-  text-transform: uppercase;
-  &::after {
-    background: url("../images/sprite/sprite.svg#liink-arrow");
-    content: "";
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: calc(50% - 6px);
-    right: -13px;
+  .publications-link {
+    display: inline-block;
+    @include linkBold(14px, 17px);
+    letter-spacing: 1px;
+    color: $Active;
+    position: relative;
+    text-transform: uppercase;
+    &::after {
+      background: url("../images/sprite/sprite.svg#liink-arrow");
+      content: "";
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: calc(50% - 6px);
+      right: -13px;
+    }
+  }
+  .publications-link:hover {
+    color: $ActiveHover;
   }
 }
-.public-all:hover {
-  color: $ActiveHover;
-}
-.article-publications {
+.publications-wrapper {
+  overflow: hidden;
   max-width: 1320px;
-  position: relative;
-  &:after {
-    background: $LinearGradient;
-    content: "";
-    position: absolute;
-    height: 200px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 3;
-  }
+  max-height: 820px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -426,171 +422,216 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: stretch;
+    max-height: 720px;
   }
-  .publications-section {
-    flex-wrap: nowrap;
+  &:after {
     @include media(">=992px") {
-      margin-left: 40px;
-      &:first-child {
-        margin-left: 0;
-      }
+      background: $LinearGradient;
+      content: "";
+      position: absolute;
+      height: 200px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      z-index: 3;
     }
-    div {
-      @include media(">=992px") {
-        margin-bottom: 40px;
-        max-width: 413px;
-      }
+  }
+}
+.publications-section {
+  max-width: 414px;
+  @include media(">=992px") {
+    margin-left: 30px;
+    &:first-child {
+      margin-left: 0;
     }
-
-    img {
-      padding: 0;
+  }
+  .not-show-mobile {
+    display: none;
+    @include media(">=992px") {
       display: block;
-      width: 100%;
-      border-radius: 8px 8px 0px 0px;
-      @include media(">=576px") {
-        margin: auto;
-        width: auto;
-      }
-      @include media(">=992px") {
-        width: 100%;
-      }
     }
-    a {
+  }
+  .publications-content {
+    width: 100%;
+    @include media(">=992px") {
+      margin-bottom: 40px;
+      max-width: 414px;
+    }
+    .bg-publications {
+      background-color: $colorWhite;
+      border-radius: 8px;
+    }
+  }
+  img {
+    padding: 0;
+    display: block;
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+  }
+  a {
+    padding-top: 20px;
+    display: block;
+    @include LinkActive(18px, 21px);
+    margin: 0 20px 10px;
+    text-align: left;
+  }
+  a:hover {
+    color: $ActiveHover;
+  }
+  time {
+    margin: 0 20px 20px;
+    display: block;
+    @include textRegular(12px, 14px, $TextGrey);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .publications-text {
+    display: none;
+    @include media(">=992px") {
+      display: block;
       padding-top: 20px;
-      display: block;
-      @include LinkActive(18px, 21px);
-      margin: 0 20px 10px;
-      text-align: left;
-      @include media(">=576px") {
-        text-align: center;
-      }
-      @include media(">=992px") {
-        text-align: left;
-      }
+      border-top: 4px solid $SeparatorGrey;
+      margin: 0 20px;
     }
-    a:hover {
+    .external-reference {
+      display: inline;
+      @include textRegular(16px, 22px, $colorBlack);
+    }
+    .external-reference:hover {
       color: $ActiveHover;
     }
-    time {
-      margin: 0 20px 20px;
-      display: block;
-      @include textRegular(12px, 14px, $TextGrey);
-      letter-spacing: 1px;
-
-      text-transform: uppercase;
-      text-align: left;
-      @include media(">=576px") {
-        text-align: center;
-      }
-      @include media(">=992px") {
-        text-align: left;
-      }
-    }
-    p {
-      display: none;
-      @include media(">=992px") {
-        display: block;
-        // width: 100%;
-        padding-top: 20px;
-        border-top: 4px solid $SeparatorGrey;
-        margin: 0 20px;
-      }
-      .external-reference {
-        display: inline;
-        @include textRegular(16px, 22px, $colorBlack);
-      }
-      .external-reference:hover {
-        color: $ActiveHover;
-      }
-    }
   }
 }
-.bg-content-radius {
-  background-color: $colorWhite;
-  border-radius: 8px;
-}
-.more-publications {
-  display: block;
-  width: 250px;
-  height: 50px;
-  position: absolute;
-  bottom: 40px;
-  left: calc(50% - 125px);
-  background: $Active;
-  box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
-  border-radius: 12px;
-  z-index: 5;
-  span {
-    position: absolute;
-    top: 14px;
-    left: 80px;
+
+.btn-more-publications {
+  padding-bottom: 40px;
+  @include media(">=992px") {
+    padding-bottom: 0;
+  }
+  .more-publications {
+    display: flex;
+    width: 250px;
+    height: 50px;
+    background: $Active;
+    box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+    border-radius: 12px;
     @include linkRegular(14px, 16.5px);
     color: $colorWhite;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    @include media(">=992px") {
+      position: absolute;
+      bottom: 40px;
+      left: calc(50% - 125px);
+      z-index: 5;
+      margin-bottom: 0;
+    }
   }
-}
-.short-block-mob {
-  overflow: hidden;
 }
 // End article
 
 // Article publications (page: publications)
-.btn-publications {
-  width: 260px;
-  height: 40px;
-  border-radius: 12px;
-  background-color: $SeparatorGrey;
-  margin: 0 auto 40px;
-  display: flex;
-  justify-content: space-around;
-  span {
-    border-radius: 10px;
-    width: 127px;
-    height: 36px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    a {
-      text-transform: uppercase;
-      display: block;
-      @include linkMedium(18px, 21px);
-      color: $Main;
-    }
-  }
-  .activ,
-  span:hover {
-    background: $colorWhite;
-  }
-}
-.bg-none {
-  &:after {
-    background: none;
-  }
-  .publications-section-secondary {
-    div:nth-child(3) {
-      display: none;
-      @include media(">=992px") {
-        display: block;
-      }
-    }
-    div:last-child {
-      display: none;
-      @include media(">=992px") {
-        display: block;
-      }
-    }
-  }
-}
-.more-publications-secondary {
-  position: static;
-  display: block;
-  margin: 40px auto;
-  span {
-    position: static;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-}
+// .btn-publications {
+//   width: 260px;
+//   height: 40px;
+//   border-radius: 12px;
+//   background-color: $SeparatorGrey;
+//   margin: 0 auto 40px;
+//   display: flex;
+//   justify-content: space-around;
+//   span {
+//     border-radius: 10px;
+//     width: 127px;
+//     height: 36px;
+//     margin: auto;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     a {
+//       text-transform: uppercase;
+//       display: block;
+//       @include linkMedium(18px, 21px);
+//       color: $Main;
+//     }
+//   }
+//   .activ,
+//   span:hover {
+//     background: $colorWhite;
+//   }
+// }
+// .bg-none {
+//   &:after {
+//     background: none;
+//   }
+//   .publications-section-secondary {
+//     div:nth-child(3) {
+//       display: none;
+//       @include media(">=992px") {
+//         display: block;
+//       }
+//     }
+//     div:last-child {
+//       display: none;
+//       @include media(">=992px") {
+//         display: block;
+//       }
+//     }
+//   }
+// }
+// .more-publications-secondary {
+//   position: static;
+//   display: block;
+//   margin: 40px auto;
+//   span {
+//     position: static;
+//     display: flex;
+//     height: 100%;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// }
 // End article publications (page: publications)
+
+// Publication entry (page: publications entry)
+
+.publication-entry {
+}
+.publications-entry-section {
+  max-width: 1320px;
+  margin: auto;
+  .publications-entry-content {
+    padding: 0 20px;
+    h1 {
+      display: block;
+      @include textRegular(32px, 38px, $Main);
+      margin: 20px 0 10px;
+      text-align: left;
+      @include media(">=992px") {
+        margin: 40px 0 10px;
+      }
+    }
+    time {
+      margin: 0 0 20px;
+      @include media(">=992px") {
+        margin: 0 0 40px;
+      }
+    }
+    p {
+      margin: 20px 0;
+      @include media(">=992px") {
+        margin: 40px 0;
+      }
+    }
+    .publications-text {
+      border-top: 4px solid $SeparatorGrey;
+      display: block;
+      margin: 0;
+      padding-top: 20px;
+      @include media(">=992px") {
+        padding-top: 40px;
+      }
+    }
+  }
+}
+// End publication entry (page: publications entry)

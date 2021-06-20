@@ -373,7 +373,7 @@
 //Footer
 .footer-wpapper {
   color: $TextGrey;
-  height: 151px;
+  min-height: 151px;
   background: $BgGrey;
 }
 .footer-contact {
