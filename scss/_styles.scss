@@ -323,11 +323,14 @@
 }
 .section-successful-cases {
   margin-bottom: 36px;
+
   .section-text {
     background: $BgGrey;
     border-radius: 12px;
+
     .section-link {
       a {
+        padding-top: 20px;
         text-transform: uppercase;
         display: inline-block;
         @include linkBold(14px, 17px);
@@ -354,6 +357,9 @@
       @include media(">=992px") {
         margin-bottom: 40px;
       }
+    }
+    div {
+      border: 1px solid $colorWhite;
     }
   }
 }
