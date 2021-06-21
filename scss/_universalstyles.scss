@@ -70,6 +70,7 @@
       width: 155px;
     }
   }
+
   .logo-black-subsection {
     display: inline-block;
     background: url("../images/svg/logo-black-subsection.svg") no-repeat;
@@ -83,6 +84,24 @@
     @include media(">=1170px") {
       width: 155px;
       height: 62px;
+    }
+  }
+  .logo-page-about {
+    display: inline-block;
+    background: url("../images/svg/logo-page-about.svg") no-repeat;
+    background-size: cover;
+    width: 80px;
+    height: 24px;
+    margin-bottom: 10px;
+    @include media(">=992px") {
+      width: 120px;
+      height: 36px;
+      margin-bottom: 14px;
+    }
+    @include media(">=1170px") {
+      width: 160px;
+      height: 48px;
+      margin-bottom: 16px;
     }
   }
   .logo-page-publications {
