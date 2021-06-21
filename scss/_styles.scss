@@ -268,23 +268,22 @@
 
   img {
     flex-shrink: 0;
-    margin-right: 10px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 10px;
+    left: 10px;
     @include media(">=992px") {
       flex-shrink: 1;
       border-radius: 12px 0px 0px 12px;
       width: 100%;
       height: 100%;
       position: static;
-      margin-right: 0px;
     }
   }
   .carousel-text {
+    padding: 10px;
     @include media(">=992px") {
       margin: 40px 0 0 40px;
     }
@@ -318,7 +317,10 @@
   }
 }
 .section-successful-cases {
-  margin-bottom: 36px;
+  margin: 0 10px 36px;
+  @include media(">=992px") {
+    margin: 0 0 36px;
+  }
 
   .section-text {
     background: $BgGrey;
@@ -720,6 +722,7 @@
   }
 }
 // End publication entry (page: publications entry)
+
 // Article team (page: Team)
 .team-wrapper {
   h1 {
@@ -778,7 +781,6 @@
         margin-bottom: 0;
       }
     }
-
     a {
       display: block;
       background: $BgGrey;
@@ -805,5 +807,8 @@
     }
   }
 }
-
 // End article team (page: Team)
+
+// Article team (page: Contact)
+
+// End article team (page: Contact)
