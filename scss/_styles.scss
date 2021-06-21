@@ -94,23 +94,20 @@
         @include textRegular(21px, 30px, $colorWhite);
       }
     }
-    span {
-      display: block;
-      a {
-        background: $backgroundActive;
-        opacity: 0.2;
+    ul {
+      li {
+        background: rgba(36, 163, 255, 0.2);
+
         width: 16px;
         height: 16px;
         border-radius: 50%;
         text-align: center;
         margin: 20px 7px 0;
         display: inline-block;
+        cursor: pointer;
         &.active {
-          opacity: inherit;
+          background: $link-color;
         }
-      }
-      @include media(">=992px") {
-        display: none;
       }
     }
   }
@@ -121,8 +118,7 @@
     margin-bottom: 40px;
   }
   .main-container-link {
-    color: $colorWhite;
-    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.5);
     position: relative;
   }
   .main-container-link::after {
@@ -329,9 +325,9 @@
     border-radius: 12px;
 
     div {
-      border: 1px solid $colorWhite;
+      // border: 1px solid $colorWhite;
       @include media(">=992px") {
-        align-self: stretch;
+        // align-self: stretch;
       }
       .section-link {
         a {

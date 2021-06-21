@@ -1,7 +1,7 @@
 @mixin textHeaderGradient($fs, $lh) {
   font-size: $fs;
   line-height: $lh;
-  font-weight: bold;
+  font-weight: 700;
   font-family: "ttnorms-bold", sans-serif;
   background: #f0145a;
   background: -webkit-linear-gradient(to right, #f0145a 0%, #ef8080 100%);
@@ -49,7 +49,7 @@
   font-size: $fs;
   line-height: $lh;
   font-family: "ttnorms-medium", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 @mixin linkBold($fs, $lh) {
   font-size: $fs;
