@@ -72,13 +72,31 @@
   }
   .logo-black-subsection {
     display: block;
-    background: url("../images/svg/logo-black-subsection-mobile.svg") no-repeat;
+    background: url("../images/svg/logo-black-subsection.svg") no-repeat;
+    background-size: cover;
     width: 222px;
     height: 31px;
+    @include media(">=992px") {
+      width: 333px;
+      height: 47px;
+    }
     @include media(">=1170px") {
-      background: url("../images/svg/logo-black-subsection.svg") no-repeat;
-      background-size: cover;
       width: 444px;
+      height: 63px;
+    }
+  }
+  .logo-black-team-page {
+    display: block;
+    background: url("../images/svg/logo-black-team-page.svg") no-repeat;
+    background-size: cover;
+    width: 210px;
+    height: 31px;
+    @include media(">=992px") {
+      width: 315px;
+      height: 49px;
+    }
+    @include media(">=1170px") {
+      width: 419px;
       height: 63px;
     }
   }
