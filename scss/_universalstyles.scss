@@ -60,7 +60,7 @@
 }
 .logo-header {
   .logo {
-    display: block;
+    display: inline-block;
     background: url("../images/svg/logo-white.svg") no-repeat;
     background-size: cover;
     height: 31px;
@@ -100,6 +100,24 @@
     }
     @include media(">=1170px") {
       width: 160px;
+      height: 48px;
+      margin-bottom: 16px;
+    }
+  }
+  .logo-page-services {
+    display: inline-block;
+    background: url("../images/svg/logo-page-services.svg") no-repeat;
+    background-size: cover;
+    width: 115px;
+    height: 24px;
+    margin-bottom: 10px;
+    @include media(">=992px") {
+      width: 163px;
+      height: 36px;
+      margin-bottom: 20px;
+    }
+    @include media(">=1170px") {
+      width: 210px;
       height: 48px;
       margin-bottom: 16px;
     }
