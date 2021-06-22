@@ -18,6 +18,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 @mixin textRegular($fs, $lh, $color) {
   font-size: $fs;
   line-height: $lh;

@@ -37,7 +37,7 @@ $paragraph-margin-bottom: 0rem !default;
 $form-label-margin-bottom: 0rem !default;
 $breadcrumb-margin-bottom: 0rem !default;
 
-//Gradient
+// //Gradient
 $GradientHeaderBottom: linear-gradient(
   180deg,
   rgba(50, 50, 100, 0) 16.67%,
@@ -55,22 +55,23 @@ $GradientSoft: linear-gradient(
   #323264 51.39%,
   #7a425e 87.53%
 ) !default;
-$GradientRed: linear-gradient(
-  121.42deg,
-  #f0145a 30.65%,
-  #693264 107.33%
-) !default;
-$GradientSupersoft: linear-gradient(
-  228.57deg,
-  #323264 11.93%,
-  #323264 57.17%,
-  #643e72 87.46%
-) !default;
-$GradientRedText: linear-gradient(
-  90.13deg,
-  #f0145a 0.84%,
-  #ef8080 99.96%
-) !default;
+
+// $GradientRed: linear-gradient(
+//   121.42deg,
+//   #f0145a 30.65%,
+//   #693264 107.33%
+// ) !default;
+// $GradientSupersoft: linear-gradient(
+//   228.57deg,
+//   #323264 11.93%,
+//   #323264 57.17%,
+//   #643e72 87.46%
+// ) !default;
+// $GradientRedText: linear-gradient(
+//   90.13deg,
+//   #f0145a 0.84%,
+//   #ef8080 99.96%
+// ) !default;
 $LinearGradient: linear-gradient(
   180deg,
   rgba(245, 245, 250, 0) 0%,
