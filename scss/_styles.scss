@@ -265,7 +265,6 @@
     display: flex;
     align-items: flex-start;
   }
-
   img {
     flex-shrink: 0;
     width: 60px;
@@ -321,15 +320,13 @@
   @include media(">=992px") {
     margin: 0 0 36px;
   }
-
   .section-text {
     background: $BgGrey;
     border-radius: 12px;
-
     div {
-      // border: 1px solid $colorWhite;
+      border: 1px solid $colorWhite;
       @include media(">=992px") {
-        // align-self: stretch;
+        align-self: stretch;
       }
       .section-link {
         a {
